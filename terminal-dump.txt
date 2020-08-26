@@ -1,0 +1,259 @@
+gabriel@gabriel-G3-3579:~/Desktop/golem-linux-v0.3.3-alpha.5$ yagna app-key create requestor
+e1d2503052a845619438a6197b626abf
+gabriel@gabriel-G3-3579:~/Desktop/golem-linux-v0.3.3-alpha.5$ yagna app-key list
+┌─────────────┬────────────────────────────────────┬──────────────────────────────────────────────┬───────────┬─────────────────────────────────┐
+│  name       │  key                               │  id                                          │  role     │  created                        │
+├─────────────┼────────────────────────────────────┼──────────────────────────────────────────────┼───────────┼─────────────────────────────────┤
+│  requestor  │  e1d2503052a845619438a6197b626abf  │  0xcb94e0f49d27789442c2ab4dbea8f37699b3d1e1  │  manager  │  2020-08-26T12:30:28.903213730  │
+└─────────────┴────────────────────────────────────┴──────────────────────────────────────────────┴───────────┴─────────────────────────────────┘
+gabriel@gabriel-G3-3579:~/Desktop/golem-linux-v0.3.3-alpha.5$ yagna payment init -r
+gabriel@gabriel-G3-3579:~/Desktop/golem-linux-v0.3.3-alpha.5$ yagna payment status
+---
+amount: "1000"
+incoming:
+  accepted: "0"
+  confirmed: "0"
+  rejected: "0"
+  requested: "0"
+outgoing:
+  accepted: "0"
+  confirmed: "0"
+  rejected: "0"
+  requested: "0"
+reserved: "0"
+gabriel@gabriel-G3-3579:~/Desktop/golem-linux-v0.3.3-alpha.5$ python3 -m venv ~/.envs/yagna-python-tutorial
+gabriel@gabriel-G3-3579:~/Desktop/golem-linux-v0.3.3-alpha.5$ source ~/.envs/yagna-python-tutorial/bin/activate
+(yagna-python-tutorial) gabriel@gabriel-G3-3579:~/Desktop/golem-linux-v0.3.3-alpha.5$ pip3 install yapapi certifi
+Collecting yapapi
+  Downloading yapapi-0.1.5-py3-none-any.whl (32 kB)
+Collecting certifi
+  Using cached certifi-2020.6.20-py2.py3-none-any.whl (156 kB)
+Collecting typing_extensions<4.0.0,>=3.7.4
+  Downloading typing_extensions-3.7.4.3-py3-none-any.whl (22 kB)
+Collecting urllib3<2.0.0,>=1.25.9
+  Using cached urllib3-1.25.10-py2.py3-none-any.whl (127 kB)
+Collecting aiohttp<4.0,>=3.6
+  Using cached aiohttp-3.6.2-py3-none-any.whl (441 kB)
+Collecting ya-aioclient<0.2.0,>=0.1.1
+  Downloading ya_aioclient-0.1.2-py3-none-any.whl (172 kB)
+     |████████████████████████████████| 172 kB 3.0 MB/s 
+Collecting jsonrpc-base<2.0.0,>=1.0.3
+  Downloading jsonrpc-base-1.1.0.tar.gz (5.5 kB)
+Collecting async_exit_stack<2.0.0,>=1.0.1
+  Downloading async_exit_stack-1.0.1-py3-none-any.whl (4.7 kB)
+Collecting multidict<5.0,>=4.5
+  Using cached multidict-4.7.6-cp38-cp38-manylinux1_x86_64.whl (162 kB)
+Collecting chardet<4.0,>=2.0
+  Using cached chardet-3.0.4-py2.py3-none-any.whl (133 kB)
+Collecting attrs>=17.3.0
+  Downloading attrs-20.1.0-py2.py3-none-any.whl (49 kB)
+     |████████████████████████████████| 49 kB 8.2 MB/s 
+Collecting yarl<2.0,>=1.0
+  Downloading yarl-1.5.1-cp38-cp38-manylinux1_x86_64.whl (262 kB)
+     |████████████████████████████████| 262 kB 5.6 MB/s 
+Collecting async-timeout<4.0,>=3.0
+  Using cached async_timeout-3.0.1-py3-none-any.whl (8.2 kB)
+Collecting python-dateutil<3.0.0,>=2.8.1
+  Using cached python_dateutil-2.8.1-py2.py3-none-any.whl (227 kB)
+Collecting idna>=2.0
+  Using cached idna-2.10-py2.py3-none-any.whl (58 kB)
+Collecting six>=1.5
+  Using cached six-1.15.0-py2.py3-none-any.whl (10 kB)
+Building wheels for collected packages: jsonrpc-base
+  Building wheel for jsonrpc-base (setup.py) ... error
+  ERROR: Command errored out with exit status 1:
+   command: /home/gabriel/.envs/yagna-python-tutorial/bin/python3 -u -c 'import sys, setuptools, tokenize; sys.argv[0] = '"'"'/tmp/pip-install-5tmu7tz3/jsonrpc-base/setup.py'"'"'; __file__='"'"'/tmp/pip-install-5tmu7tz3/jsonrpc-base/setup.py'"'"';f=getattr(tokenize, '"'"'open'"'"', open)(__file__);code=f.read().replace('"'"'\r\n'"'"', '"'"'\n'"'"');f.close();exec(compile(code, __file__, '"'"'exec'"'"'))' bdist_wheel -d /tmp/pip-wheel-b02yef5h
+       cwd: /tmp/pip-install-5tmu7tz3/jsonrpc-base/
+  Complete output (6 lines):
+  usage: setup.py [global_opts] cmd1 [cmd1_opts] [cmd2 [cmd2_opts] ...]
+     or: setup.py --help [cmd1 cmd2 ...]
+     or: setup.py --help-commands
+     or: setup.py cmd --help
+  
+  error: invalid command 'bdist_wheel'
+  ----------------------------------------
+  ERROR: Failed building wheel for jsonrpc-base
+  Running setup.py clean for jsonrpc-base
+Failed to build jsonrpc-base
+Installing collected packages: typing-extensions, urllib3, multidict, chardet, attrs, idna, yarl, async-timeout, aiohttp, six, python-dateutil, ya-aioclient, jsonrpc-base, async-exit-stack, yapapi, certifi
+    Running setup.py install for jsonrpc-base ... done
+Successfully installed aiohttp-3.6.2 async-exit-stack-1.0.1 async-timeout-3.0.1 attrs-20.1.0 certifi-2020.6.20 chardet-3.0.4 idna-2.10 jsonrpc-base-1.1.0 multidict-4.7.6 python-dateutil-2.8.1 six-1.15.0 typing-extensions-3.7.4.3 urllib3-1.25.10 ya-aioclient-0.1.2 yapapi-0.1.5 yarl-1.5.1
+
+(yagna-python-tutorial) gabriel@gabriel-G3-3579:~/Desktop/golem-linux-v0.3.3-alpha.5/yapapi/examples/blender$ pip3 install yapapi certifi
+Requirement already satisfied: yapapi in /home/gabriel/.envs/yagna-python-tutorial/lib/python3.8/site-packages (0.1.5)
+Requirement already satisfied: certifi in /home/gabriel/.envs/yagna-python-tutorial/lib/python3.8/site-packages (2020.6.20)
+Requirement already satisfied: jsonrpc-base<2.0.0,>=1.0.3 in /home/gabriel/.envs/yagna-python-tutorial/lib/python3.8/site-packages (from yapapi) (1.1.0)
+Requirement already satisfied: ya-aioclient<0.2.0,>=0.1.1 in /home/gabriel/.envs/yagna-python-tutorial/lib/python3.8/site-packages (from yapapi) (0.1.2)
+Requirement already satisfied: aiohttp<4.0,>=3.6 in /home/gabriel/.envs/yagna-python-tutorial/lib/python3.8/site-packages (from yapapi) (3.6.2)
+Requirement already satisfied: urllib3<2.0.0,>=1.25.9 in /home/gabriel/.envs/yagna-python-tutorial/lib/python3.8/site-packages (from yapapi) (1.25.10)
+Requirement already satisfied: async_exit_stack<2.0.0,>=1.0.1 in /home/gabriel/.envs/yagna-python-tutorial/lib/python3.8/site-packages (from yapapi) (1.0.1)
+Requirement already satisfied: typing_extensions<4.0.0,>=3.7.4 in /home/gabriel/.envs/yagna-python-tutorial/lib/python3.8/site-packages (from yapapi) (3.7.4.3)
+Requirement already satisfied: python-dateutil<3.0.0,>=2.8.1 in /home/gabriel/.envs/yagna-python-tutorial/lib/python3.8/site-packages (from ya-aioclient<0.2.0,>=0.1.1->yapapi) (2.8.1)
+Requirement already satisfied: attrs>=17.3.0 in /home/gabriel/.envs/yagna-python-tutorial/lib/python3.8/site-packages (from aiohttp<4.0,>=3.6->yapapi) (20.1.0)
+Requirement already satisfied: chardet<4.0,>=2.0 in /home/gabriel/.envs/yagna-python-tutorial/lib/python3.8/site-packages (from aiohttp<4.0,>=3.6->yapapi) (3.0.4)
+Requirement already satisfied: multidict<5.0,>=4.5 in /home/gabriel/.envs/yagna-python-tutorial/lib/python3.8/site-packages (from aiohttp<4.0,>=3.6->yapapi) (4.7.6)
+Requirement already satisfied: async-timeout<4.0,>=3.0 in /home/gabriel/.envs/yagna-python-tutorial/lib/python3.8/site-packages (from aiohttp<4.0,>=3.6->yapapi) (3.0.1)
+Requirement already satisfied: yarl<2.0,>=1.0 in /home/gabriel/.envs/yagna-python-tutorial/lib/python3.8/site-packages (from aiohttp<4.0,>=3.6->yapapi) (1.5.1)
+Requirement already satisfied: six>=1.5 in /home/gabriel/.envs/yagna-python-tutorial/lib/python3.8/site-packages (from python-dateutil<3.0.0,>=2.8.1->ya-aioclient<0.2.0,>=0.1.1->yapapi) (1.15.0)
+Requirement already satisfied: idna>=2.0 in /home/gabriel/.envs/yagna-python-tutorial/lib/python3.8/site-packages (from yarl<2.0,>=1.0->aiohttp<4.0,>=3.6->yapapi) (2.10)
+(yagna-python-tutorial) gabriel@gabriel-G3-3579:~/Desktop/golem-linux-v0.3.3-alpha.5/yapapi/examples/blender$ git checkout 0.1.5
+Note: switching to '0.1.5'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by switching back to a branch.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -c with the switch command. Example:
+
+  git switch -c <new-branch-name>
+
+Or undo this operation with:
+
+  git switch -
+
+Turn off this advice by setting config variable advice.detachedHead to false
+
+HEAD is now at 4c2bbc8 * update default repo url * bump patch version
+(yagna-python-tutorial) gabriel@gabriel-G3-3579:~/Desktop/golem-linux-v0.3.3-alpha.5/yapapi/examples/blender$ pip3 install yapapi certifi^C
+(yagna-python-tutorial) gabriel@gabriel-G3-3579:~/Desktop/golem-linux-v0.3.3-alpha.5/yapapi/examples/blender$ export YAGNA_APPKEY=e1d2503052a845619438a6197b626abf
+(yagna-python-tutorial) gabriel@gabriel-G3-3579:~/Desktop/golem-linux-v0.3.3-alpha.5/yapapi/examples/blender$ cd yapapi/examples/blender
+bash: cd: yapapi/examples/blender: No such file or directory
+(yagna-python-tutorial) gabriel@gabriel-G3-3579:~/Desktop/golem-linux-v0.3.3-alpha.5/yapapi/examples/blender$ python3 ./blender.py
+progress= {'allocation': 'b85c76ff-c7b5-4c44-bad7-4f52c99483b5', 'spent_amount': Decimal('0'), 'remaining_amount': Decimal('10')}
+('sub', 'created', 'c6c2c814-1453-4553-beb1-6cdd2ddc2e73', {})
+('prop', 'recv', '96483601-c1eb-4437-a696-67c7c9cd1bd6', {'_from': '0x82914e8d26322f1977a17c2544c1327c0c3ccb8c'})
+('prop', 'respond', '96483601-c1eb-4437-a696-67c7c9cd1bd6', {})
+('prop', 'recv', 'c99953e8-3913-4066-bc24-e64195c85746', {'_from': '0xdf18d50a0b1f4007432eb42fad11ff706b40cc1b'})
+('prop', 'respond', 'c99953e8-3913-4066-bc24-e64195c85746', {})
+('prop', 'recv', '4fd5364a-9834-4597-a111-353d88fac9b6', {'_from': '0xf554f79cf0787008e12964519f28c0100343764b'})
+('prop', 'respond', '4fd5364a-9834-4597-a111-353d88fac9b6', {})
+('prop', 'recv', 'bd09a76d-81ac-4cf0-b78f-0be3260f544f', {'_from': '0x717464072d7926889b86c3777e666ee858eda263'})
+('prop', 'respond', 'bd09a76d-81ac-4cf0-b78f-0be3260f544f', {})
+('prop', 'recv', '102d1be3-aaec-4636-9aa6-98686c5e948d', {'_from': '0x82b5389e3a0b5800918c01ec05afb93451e0d41d'})
+('prop', 'respond', '102d1be3-aaec-4636-9aa6-98686c5e948d', {})
+('prop', 'recv', '94475ee2-f780-468c-9280-1896ed72a6eb', {'_from': '0x6394ca3105d9745656f49d7457dfb60349fbeee3'})
+('prop', 'respond', '94475ee2-f780-468c-9280-1896ed72a6eb', {})
+('prop', 'recv', 'f29c7da5-26f2-4e65-af01-c21426e7038a', {'_from': '0x37bc0a5e35863200eecfb55a4134399597017c5b'})
+('prop', 'respond', 'f29c7da5-26f2-4e65-af01-c21426e7038a', {})
+('prop', 'recv', '79975ace-8a4b-4285-ac67-7335353afbc1', {'_from': '0x5ddfed430c9a15125dbd23ffa25c34e897e28666'})
+('prop', 'respond', '79975ace-8a4b-4285-ac67-7335353afbc1', {})
+('prop', 'recv', 'fdb0103a-76c2-433b-8686-b6320faafffd', {'_from': '0xdf18d50a0b1f4007432eb42fad11ff706b40cc1b'})
+('prop', 'buffered', 'fdb0103a-76c2-433b-8686-b6320faafffd', {})
+('prop', 'recv', '82bad5e7-a1ce-4131-9b9e-63aace77e654', {'_from': '0x82914e8d26322f1977a17c2544c1327c0c3ccb8c'})
+('prop', 'buffered', '82bad5e7-a1ce-4131-9b9e-63aace77e654', {})
+('prop', 'recv', 'c2a87fd1-be45-4b90-b459-1f12ce8f8352', {'_from': '0xf554f79cf0787008e12964519f28c0100343764b'})
+('prop', 'buffered', 'c2a87fd1-be45-4b90-b459-1f12ce8f8352', {})
+('prop', 'recv', '93814339-7896-470e-986a-c2e533a7f9f5', {'_from': '0x717464072d7926889b86c3777e666ee858eda263'})
+('prop', 'buffered', '93814339-7896-470e-986a-c2e533a7f9f5', {})
+('prop', 'recv', '0e452656-d737-42d2-9855-9ddbb1f4f8e1', {'_from': '0x82b5389e3a0b5800918c01ec05afb93451e0d41d'})
+('prop', 'buffered', '0e452656-d737-42d2-9855-9ddbb1f4f8e1', {})
+('prop', 'recv', '40973f0e-d636-4137-8623-6390bcdd1c47', {'_from': '0x6394ca3105d9745656f49d7457dfb60349fbeee3'})
+('prop', 'buffered', '40973f0e-d636-4137-8623-6390bcdd1c47', {})
+('prop', 'recv', '53de675d-90d2-4f42-80c4-792732cf979f', {'_from': '0x37bc0a5e35863200eecfb55a4134399597017c5b'})
+('prop', 'buffered', '53de675d-90d2-4f42-80c4-792732cf979f', {})
+('prop', 'recv', '5181f7d8-7a90-4daa-a814-c55bc894c0da', {'_from': '0x5ddfed430c9a15125dbd23ffa25c34e897e28666'})
+('prop', 'buffered', '5181f7d8-7a90-4daa-a814-c55bc894c0da', {})
+('agr', 'create', '40973f0e-d636-4137-8623-6390bcdd1c47', {'provider_idn': Identification(name='tworec@adjoint-testnet', subnet_tag='testnet')})
+('agr', 'confirm', '40973f0e-d636-4137-8623-6390bcdd1c47', {})
+('wkr', 'created', 0, {'agreement': '40973f0e-d636-4137-8623-6390bcdd1c47', 'provider_idn': Identification(name='tworec@adjoint-testnet', subnet_tag='testnet')})
+('act', 'create', '54653c3395f74abda9b94b9f9c17e9e9', {})
+('wkr', 'get-work', 0, {'task': Task(data=0})
+new batch !!! [{'deploy': {}}, {'start': {}}, {'transfer': {'from': 'gftp://0xcb94e0f49d27789442c2ab4dbea8f37699b3d1e1/ee82d5dc7188611da558c76e777a2df7867d9526eac6fa9378728d44ca4a2a10', 'to': 'container:/golem/resource/scene.blend'}}, {'transfer': {'from': 'gftp://0xcb94e0f49d27789442c2ab4dbea8f37699b3d1e1/ac2ec7ef5af78c2faaf27ef593f9cd62666340dccfb5d730b5430f343d524933', 'to': 'container:/golem/work/params.json'}}, {'run': {'entry_point': '/golem/entrypoints/run-blender.sh', 'args': ()}}, {'transfer': {'from': 'container:/golem/output/out0000.png', 'to': 'gftp://0xcb94e0f49d27789442c2ab4dbea8f37699b3d1e1/U3XKP0q4FjpmQ5EPmdwfsKwVrfoPrGmm0AJktJDiXripEpvln7xHIYk1KPDtSvWug'}}] <yapapi.rest.activity.Batch object at 0x7f31a470fee0>
+('agr', 'create', '0e452656-d737-42d2-9855-9ddbb1f4f8e1', {'provider_idn': Identification(name='tworec@mf-testnet', subnet_tag='testnet')})
+('wkr', 'step', 0, {'message': 'stdout: {\n  "valid": {\n  ', 'idx': 0})
+('wkr', 'step', 0, {'message': None, 'idx': 1})
+('agr', 'confirm', '0e452656-d737-42d2-9855-9ddbb1f4f8e1', {})
+('wkr', 'created', 1, {'agreement': '0e452656-d737-42d2-9855-9ddbb1f4f8e1', 'provider_idn': Identification(name='tworec@mf-testnet', subnet_tag='testnet')})
+('agr', 'create', 'c2a87fd1-be45-4b90-b459-1f12ce8f8352', {'provider_idn': Identification(name='golem-dev@awokado-testnet', subnet_tag='testnet')})
+('agr', 'confirm', 'c2a87fd1-be45-4b90-b459-1f12ce8f8352', {})
+('wkr', 'created', 2, {'agreement': 'c2a87fd1-be45-4b90-b459-1f12ce8f8352', 'provider_idn': Identification(name='golem-dev@awokado-testnet', subnet_tag='testnet')})
+('act', 'create', 'd294832f794c475b95a429c347d8d8a0', {})
+('wkr', 'get-work', 1, {'task': Task(data=10})
+[2020-08-26T12:43:17Z ERROR ya_service_bus::remote_router] bind error: already registered: Service ID '/public/gftp/ee82d5dc7188611da558c76e777a2df7867d9526eac6fa9378728d44ca4a2a10/GetMetadata' already registered
+[2020-08-26T12:43:17Z ERROR ya_service_bus::remote_router] bind error: already registered: Service ID '/public/gftp/ee82d5dc7188611da558c76e777a2df7867d9526eac6fa9378728d44ca4a2a10/GetChunk' already registered
+new batch !!! [{'deploy': {}}, {'start': {}}, {'transfer': {'from': 'gftp://0xcb94e0f49d27789442c2ab4dbea8f37699b3d1e1/ee82d5dc7188611da558c76e777a2df7867d9526eac6fa9378728d44ca4a2a10', 'to': 'container:/golem/resource/scene.blend'}}, {'transfer': {'from': 'gftp://0xcb94e0f49d27789442c2ab4dbea8f37699b3d1e1/2986a1204b7e92b7877820b37cf8504bb5de6ea91da3ab48209069b2622dac5b', 'to': 'container:/golem/work/params.json'}}, {'run': {'entry_point': '/golem/entrypoints/run-blender.sh', 'args': ()}}, {'transfer': {'from': 'container:/golem/output/out0010.png', 'to': 'gftp://0xcb94e0f49d27789442c2ab4dbea8f37699b3d1e1/zVVBw1dr0hWTtrCRz5f1oHMwUoOoHDO5Y9M8jlGQiBNfDHFBySRm43QdYZCCdYOr6'}}] <yapapi.rest.activity.Batch object at 0x7f31a3eaa6a0>
+('act', 'create', 'a94d55864c204ce7ac667d30db1f9a2b', {})
+('wkr', 'get-work', 2, {'task': Task(data=20})
+[2020-08-26T12:43:19Z ERROR ya_service_bus::remote_router] bind error: already registered: Service ID '/public/gftp/ee82d5dc7188611da558c76e777a2df7867d9526eac6fa9378728d44ca4a2a10/GetMetadata' already registered
+[2020-08-26T12:43:19Z ERROR ya_service_bus::remote_router] bind error: already registered: Service ID '/public/gftp/ee82d5dc7188611da558c76e777a2df7867d9526eac6fa9378728d44ca4a2a10/GetChunk' already registered
+('wkr', 'step', 1, {'message': 'stdout: {\n  "valid": {\n  ', 'idx': 0})
+('wkr', 'step', 1, {'message': None, 'idx': 1})
+new batch !!! [{'deploy': {}}, {'start': {}}, {'transfer': {'from': 'gftp://0xcb94e0f49d27789442c2ab4dbea8f37699b3d1e1/ee82d5dc7188611da558c76e777a2df7867d9526eac6fa9378728d44ca4a2a10', 'to': 'container:/golem/resource/scene.blend'}}, {'transfer': {'from': 'gftp://0xcb94e0f49d27789442c2ab4dbea8f37699b3d1e1/30d60d68c6b3ff326d441d664f48d6cbb50febd1890183b17b88b8370d40c754', 'to': 'container:/golem/work/params.json'}}, {'run': {'entry_point': '/golem/entrypoints/run-blender.sh', 'args': ()}}, {'transfer': {'from': 'container:/golem/output/out0020.png', 'to': 'gftp://0xcb94e0f49d27789442c2ab4dbea8f37699b3d1e1/1KjJo1dK9rPGpht3v7GzVtZCG7eHpHRDIr5eurG5Z85VDUISx2CnTtbDHjo1s13LC'}}] <yapapi.rest.activity.Batch object at 0x7f31a3eaafa0>
+('wkr', 'step', 0, {'message': None, 'idx': 2})
+('wkr', 'step', 0, {'message': None, 'idx': 3})
+('wkr', 'step', 0, {'message': 'stdout: \x1bc\x1b[?7l\x1b[2J\x1b[0mSe', 'idx': 4})
+('wkr', 'step', 2, {'message': 'stdout: {\n  "valid": {\n  ', 'idx': 0})
+('wkr', 'step', 2, {'message': None, 'idx': 1})
+('wkr', 'step', 2, {'message': None, 'idx': 2})
+('wkr', 'step', 1, {'message': None, 'idx': 2})
+('wkr', 'step', 1, {'message': None, 'idx': 3})
+('wkr', 'step', 2, {'message': None, 'idx': 3})
+('wkr', 'step', 1, {'message': 'stdout: \x1bc\x1b[?7l\x1b[2J\x1b[0mSe', 'idx': 4})
+start
+done
+('wkr', 'step', 0, {'message': None, 'idx': 5})
+('wkr', 'get-results', 0, {})
+('wkr', 'bach-done', 0, {})
+('agr', 'payment_prep', '40973f0e-d636-4137-8623-6390bcdd1c47', {})
+('agr', 'payment_queued', '40973f0e-d636-4137-8623-6390bcdd1c47', {})
+('task', 'accept', None, {'result': None})
+('wkr', 'get-work', 0, {'task': Task(data=30})
+new batch !!! [{'transfer': {'from': 'gftp://0xcb94e0f49d27789442c2ab4dbea8f37699b3d1e1/5b9e88c14ae3c8262abd1dd073296ece79d4c77ab114d555658e894e67a84839', 'to': 'container:/golem/work/params.json'}}, {'run': {'entry_point': '/golem/entrypoints/run-blender.sh', 'args': ()}}, {'transfer': {'from': 'container:/golem/output/out0030.png', 'to': 'gftp://0xcb94e0f49d27789442c2ab4dbea8f37699b3d1e1/m2wbrFaBGWnnN0ZqdbmTfaTIfhW0UdKOWf1skb5g8TLMSIpHsgOW9Oi9rNwSPKkjH'}}] <yapapi.rest.activity.Batch object at 0x7f31a3eaaca0>
+('wkr', 'step', 2, {'message': 'stdout: \x1bc\x1b[?7l\x1b[2J\x1b[0mSe', 'idx': 4})
+start
+done
+('wkr', 'step', 1, {'message': None, 'idx': 5})
+('wkr', 'get-results', 1, {})
+('wkr', 'bach-done', 1, {})
+('agr', 'payment_prep', '0e452656-d737-42d2-9855-9ddbb1f4f8e1', {})
+('agr', 'payment_queued', '0e452656-d737-42d2-9855-9ddbb1f4f8e1', {})
+('task', 'accept', None, {'result': None})
+('wkr', 'get-work', 1, {'task': Task(data=40})
+new batch !!! [{'transfer': {'from': 'gftp://0xcb94e0f49d27789442c2ab4dbea8f37699b3d1e1/ce0d6e911f6cf144be16d5dc4af7951058cdb3ed4fd73d2aee90a23e87fed4d1', 'to': 'container:/golem/work/params.json'}}, {'run': {'entry_point': '/golem/entrypoints/run-blender.sh', 'args': ()}}, {'transfer': {'from': 'container:/golem/output/out0040.png', 'to': 'gftp://0xcb94e0f49d27789442c2ab4dbea8f37699b3d1e1/XYxvlRcJSBmPMyTELAKsqiQzCKOF5b4bRI8YVLbZ2WHzsJs5MQerJ8nJt9Z4XvR8b'}}] <yapapi.rest.activity.Batch object at 0x7f31a3ec2df0>
+start
+done
+('wkr', 'step', 2, {'message': None, 'idx': 5})
+('wkr', 'get-results', 2, {})
+('wkr', 'bach-done', 2, {})
+('agr', 'payment_prep', 'c2a87fd1-be45-4b90-b459-1f12ce8f8352', {})
+('agr', 'payment_queued', 'c2a87fd1-be45-4b90-b459-1f12ce8f8352', {})
+('task', 'accept', None, {'result': None})
+('wkr', 'get-work', 2, {'task': Task(data=50})
+new batch !!! [{'transfer': {'from': 'gftp://0xcb94e0f49d27789442c2ab4dbea8f37699b3d1e1/8c72688632e0fc0fd6bf6ec8c53023affee1ccde0bf90240a5ce9307cf09afda', 'to': 'container:/golem/work/params.json'}}, {'run': {'entry_point': '/golem/entrypoints/run-blender.sh', 'args': ()}}, {'transfer': {'from': 'container:/golem/output/out0050.png', 'to': 'gftp://0xcb94e0f49d27789442c2ab4dbea8f37699b3d1e1/7vcw0dssfEB7AeZX7pwG6Y4836rreaVQBOPzP45kz4sq2PCLrCOFcKWFwAcBS8zUl'}}] <yapapi.rest.activity.Batch object at 0x7f31a47211f0>
+('wkr', 'step', 0, {'message': None, 'idx': 0})
+('wkr', 'step', 0, {'message': 'stdout: \x1bc\x1b[?7l\x1b[2J\x1b[0mSe', 'idx': 1})
+('wkr', 'step', 1, {'message': None, 'idx': 0})
+('wkr', 'step', 1, {'message': 'stdout: \x1bc\x1b[?7l\x1b[2J\x1b[0mSe', 'idx': 1})
+('wkr', 'step', 2, {'message': None, 'idx': 0})
+('wkr', 'step', 2, {'message': 'stdout: \x1bc\x1b[?7l\x1b[2J\x1b[0mSe', 'idx': 1})
+start
+done
+('wkr', 'step', 0, {'message': None, 'idx': 2})
+('wkr', 'get-results', 0, {})
+('wkr', 'bach-done', 0, {})
+('agr', 'payment_prep', '40973f0e-d636-4137-8623-6390bcdd1c47', {})
+('agr', 'payment_queued', '40973f0e-d636-4137-8623-6390bcdd1c47', {})
+('task', 'accept', None, {'result': None})
+start
+done
+('wkr', 'step', 1, {'message': None, 'idx': 2})
+('wkr', 'get-results', 1, {})
+('wkr', 'bach-done', 1, {})
+('agr', 'payment_prep', '0e452656-d737-42d2-9855-9ddbb1f4f8e1', {})
+('agr', 'payment_queued', '0e452656-d737-42d2-9855-9ddbb1f4f8e1', {})
+('task', 'accept', None, {'result': None})
+start
+done
+('wkr', 'step', 2, {'message': None, 'idx': 2})
+('wkr', 'get-results', 2, {})
+('wkr', 'bach-done', 2, {})
+('agr', 'payment_prep', 'c2a87fd1-be45-4b90-b459-1f12ce8f8352', {})
+('agr', 'payment_queued', 'c2a87fd1-be45-4b90-b459-1f12ce8f8352', {})
+('task', 'accept', None, {'result': None})
+progress= {'stage': 'all work done'}
+progress= {'stage': 'wait for invoices', 'agreements_to_pay': {'c2a87fd1-be45-4b90-b459-1f12ce8f8352', '0e452656-d737-42d2-9855-9ddbb1f4f8e1', '40973f0e-d636-4137-8623-6390bcdd1c47'}}
+got= {'invoice_id': '2ad063dd-67d7-40ac-920f-473dbdb329c1', 'issuer_id': '0x82b5389e3a0b5800918c01ec05afb93451e0d41d', 'recipient_id': '0xcb94e0f49d27789442c2ab4dbea8f37699b3d1e1', 'payee_addr': '0x82b5389e3a0b5800918c01ec05afb93451e0d41d', 'payer_addr': '0xcb94e0f49d27789442c2ab4dbea8f37699b3d1e1', 'last_debit_note_id': None, 'timestamp': datetime.datetime(2020, 8, 26, 12, 44, 29, 246000, tzinfo=tzutc()), 'agreement_id': '0e452656-d737-42d2-9855-9ddbb1f4f8e1', 'activity_ids': ['d294832f794c475b95a429c347d8d8a0'], 'amount': '0.1216331282530000', 'payment_due_date': datetime.datetime(2020, 8, 26, 12, 44, 28, 897063, tzinfo=tzutc()), 'status': 'RECEIVED'}
+got= {'invoice_id': '7d5225e0-0f02-411a-8808-b87a21bf0850', 'issuer_id': '0x6394ca3105d9745656f49d7457dfb60349fbeee3', 'recipient_id': '0xcb94e0f49d27789442c2ab4dbea8f37699b3d1e1', 'payee_addr': '0x6394ca3105d9745656f49d7457dfb60349fbeee3', 'payer_addr': '0xcb94e0f49d27789442c2ab4dbea8f37699b3d1e1', 'last_debit_note_id': None, 'timestamp': datetime.datetime(2020, 8, 26, 12, 44, 29, 551000, tzinfo=tzutc()), 'agreement_id': '40973f0e-d636-4137-8623-6390bcdd1c47', 'activity_ids': ['54653c3395f74abda9b94b9f9c17e9e9'], 'amount': '0.1296762221480000', 'payment_due_date': datetime.datetime(2020, 8, 26, 12, 44, 29, 164761, tzinfo=tzutc()), 'status': 'RECEIVED'}
+got= {'invoice_id': '8a3b2231-376b-434e-86f2-64740d0e4fc9', 'issuer_id': '0xf554f79cf0787008e12964519f28c0100343764b', 'recipient_id': '0xcb94e0f49d27789442c2ab4dbea8f37699b3d1e1', 'payee_addr': '0xf554f79cf0787008e12964519f28c0100343764b', 'payer_addr': '0xcb94e0f49d27789442c2ab4dbea8f37699b3d1e1', 'last_debit_note_id': None, 'timestamp': datetime.datetime(2020, 8, 26, 12, 44, 29, 860000, tzinfo=tzutc()), 'agreement_id': 'c2a87fd1-be45-4b90-b459-1f12ce8f8352', 'activity_ids': ['a94d55864c204ce7ac667d30db1f9a2b'], 'amount': '0.1265378569170000', 'payment_due_date': datetime.datetime(2020, 8, 26, 12, 44, 29, 417472, tzinfo=tzutc()), 'status': 'RECEIVED'}
+progress= {'done': True}
