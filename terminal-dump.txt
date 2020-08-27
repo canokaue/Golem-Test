@@ -1,13 +1,268 @@
-gabriel@gabriel-G3-3579:~/Desktop/golem-linux-v0.3.3-alpha.5$ yagna app-key create requestor
-e1d2503052a845619438a6197b626abf
-gabriel@gabriel-G3-3579:~/Desktop/golem-linux-v0.3.3-alpha.5$ yagna app-key list
-┌─────────────┬────────────────────────────────────┬──────────────────────────────────────────────┬───────────┬─────────────────────────────────┐
-│  name       │  key                               │  id                                          │  role     │  created                        │
-├─────────────┼────────────────────────────────────┼──────────────────────────────────────────────┼───────────┼─────────────────────────────────┤
-│  requestor  │  e1d2503052a845619438a6197b626abf  │  0xcb94e0f49d27789442c2ab4dbea8f37699b3d1e1  │  manager  │  2020-08-26T12:30:28.903213730  │
-└─────────────┴────────────────────────────────────┴──────────────────────────────────────────────┴───────────┴─────────────────────────────────┘
-gabriel@gabriel-G3-3579:~/Desktop/golem-linux-v0.3.3-alpha.5$ yagna payment init -r
-gabriel@gabriel-G3-3579:~/Desktop/golem-linux-v0.3.3-alpha.5$ yagna payment status
+Last login: Wed Aug 26 00:20:32 on ttys000
+ canok@Azazel  ~/Documents/raptor/e_raptor/connectors   master ●  python3 --version
+Python 3.7.4
+ canok@Azazel  ~/Documents/raptor/e_raptor/connectors   master ●  cd
+ canok@Azazel  ~  git --version
+git version 2.24.0
+ canok@Azazel  ~  yagna service run
+[1]    24081 killed     yagna service run
+ ✘ canok@Azazel  ~  yagna service run
+[2020-08-27T17:21:58Z INFO  yagna::data_dir] creating default data dir: "/Users/canok/Library/Application Support/GolemFactory.yagna"
+[2020-08-27T17:21:58Z INFO  yagna] Using data dir: "/Users/canok/Library/Application Support/GolemFactory.yagna" 
+
+By running this software you declare that you have read, understood
+and hereby accept the disclaimer and privacy warning found at
+https://handbook.golem.network/see-also/terms
+
+Do you accept the terms and conditions? [yes/no]: yes
+[2020-08-27T17:22:01Z INFO  yagna] Starting yagna service!
+[2020-08-27T17:22:01Z INFO  ya_sb_router] Router listening on: 127.0.0.1:7464
+[2020-08-27T17:22:01Z INFO  ya_persistence::executor] using database at: /Users/canok/Library/Application Support/GolemFactory.yagna/yagna.db
+[2020-08-27T17:22:01Z INFO  ya_persistence::executor] using database at: /Users/canok/Library/Application Support/GolemFactory.yagna/market.db
+[2020-08-27T17:22:01Z INFO  ya_persistence::executor] using database at: /Users/canok/Library/Application Support/GolemFactory.yagna/activity.db
+[2020-08-27T17:22:01Z INFO  ya_persistence::executor] using database at: /Users/canok/Library/Application Support/GolemFactory.yagna/payment.db
+[2020-08-27T17:22:01Z INFO  ya_persistence::executor] using database at: /Users/canok/Library/Application Support/GolemFactory.yagna/gnt-driver.db
+[2020-08-27T17:22:01Z INFO  yagna] activating Identity service
+Running migration 20200103135015
+[2020-08-27T17:22:01Z INFO  ya_identity::service::identity] generating new default identity
+[2020-08-27T17:22:01Z INFO  ya_identity::service::identity] using default identity: 0x15714ca8a4cd0a18ecc8a1ef875afcd4d6604fef
+[2020-08-27T17:22:01Z INFO  yagna] Identity service successfully activated
+[2020-08-27T17:22:01Z INFO  yagna] activating Net service
+[2020-08-27T17:22:01Z INFO  ya_service_bus::remote_router] trying to connect to: 127.0.0.1:7464
+[2020-08-27T17:22:01Z INFO  ya_net::service] using default identity as network id: 0x15714ca8a4cd0a18ecc8a1ef875afcd4d6604fef
+[2020-08-27T17:22:01Z INFO  ya_service_bus::connection] started connection to gsb
+[2020-08-27T17:22:01Z INFO  ya_service_bus::connection] started connection to gsb
+[2020-08-27T17:22:01Z INFO  ya_net::service] network service bound at: 3.249.139.167:7464 under: /net/0x15714ca8a4cd0a18ecc8a1ef875afcd4d6604fef
+[2020-08-27T17:22:01Z INFO  yagna] Net service successfully activated
+[2020-08-27T17:22:01Z INFO  yagna] activating Market service
+Running migration 20200203152610
+[2020-08-27T17:22:01Z INFO  yagna] Market service successfully activated
+[2020-08-27T17:22:01Z INFO  yagna] activating Activity service
+Running migration 20200526161800
+[2020-08-27T17:22:01Z INFO  yagna] Activity service successfully activated
+[2020-08-27T17:22:01Z INFO  yagna] activating Payment service
+Running migration 20200123123456
+[2020-08-27T17:22:01Z INFO  yagna] Payment service successfully activated
+[2020-08-27T17:22:01Z INFO  yagna] activating PaymentDriver service
+Running migration 20200224085334
+[2020-08-27T17:22:01Z INFO  ya_payment_driver::gnt] Load active accounts on driver start
+[2020-08-27T17:22:01Z INFO  ya_payment_driver::gnt::sender] Account: "0x15714ca8a4cd0a18ecc8a1ef875afcd4d6604fef" is unlocked
+[2020-08-27T17:22:01Z INFO  yagna] PaymentDriver service successfully activated
+[2020-08-27T17:22:01Z INFO  actix_server::builder] Starting 4 workers
+[2020-08-27T17:22:01Z INFO  actix_server::builder] Starting "actix-web-service-127.0.0.1:7465" service on 127.0.0.1:7465
+[2020-08-27T17:22:52Z INFO  ya_payment_driver::service] init: Init { address: "0x15714ca8a4cd0a18ecc8a1ef875afcd4d6604fef", mode: SEND }
+[2020-08-27T17:23:09Z INFO  ya_payment_driver::gnt] Requesting Gnt from Faucet...
+[2020-08-27T17:23:10Z INFO  ya_payment_driver::gnt] send new tx: ["ea8d81d945c856c9cfa0b16768daad4bb028ae24a1aca53350717fc3823fbe295b140c158d9f667741c982b228e7a202071d0a5ade4ee51e5e19c514bcd9e591"]
+[2020-08-27T17:24:02Z INFO  ya_payment_driver::gnt::sender] tx_id="ea8d81d945c856c9cfa0b16768daad4bb028ae24a1aca53350717fc3823fbe295b140c158d9f667741c982b228e7a202071d0a5ade4ee51e5e19c514bcd9e591", confirmations=3
+[2020-08-27T17:24:32Z INFO  ya_payment_driver::gnt::sender] tx_id="ea8d81d945c856c9cfa0b16768daad4bb028ae24a1aca53350717fc3823fbe295b140c158d9f667741c982b228e7a202071d0a5ade4ee51e5e19c514bcd9e591", confirmations=5
+[2020-08-27T17:24:32Z INFO  ya_payment_driver::gnt::sender] tx_id=ea8d81d945c856c9cfa0b16768daad4bb028ae24a1aca53350717fc3823fbe295b140c158d9f667741c982b228e7a202071d0a5ade4ee51e5e19c514bcd9e591, processed
+[2020-08-27T17:24:43Z INFO  ya_payment::service::local] get status: GetStatus(0x15714ca8a4cd0a18ecc8a1ef875afcd4d6604fef)
+[2020-08-27T17:24:43Z INFO  ya_payment_driver::service] get account balance: GetAccountBalance("15714ca8a4cd0a18ecc8a1ef875afcd4d6604fef")
+[2020-08-27T17:27:15Z INFO  actix_web::middleware::logger] 127.0.0.1:51667 "POST /payment-api/v1/requestor/allocations HTTP/1.1" 201 175 "-" "OpenAPI-Generator//python" 0.004658
+[2020-08-27T17:27:15Z INFO  actix_web::middleware::logger] 127.0.0.1:51667 "GET /payment-api/v1/requestor/allocations/a73deb58-bda2-4f60-aedb-384b25cf5af1 HTTP/1.1" 200 175 "-" "OpenAPI-Generator//python" 0.000403
+[2020-08-27T17:27:23Z INFO  actix_web::middleware::logger] 127.0.0.1:51689 "DELETE /payment-api/v1/requestor/allocations/a73deb58-bda2-4f60-aedb-384b25cf5af1 HTTP/1.1" 200 4 "-" "OpenAPI-Generator//python" 0.003066
+[2020-08-27T17:27:31Z INFO  actix_web::middleware::logger] 127.0.0.1:51690 "POST /payment-api/v1/requestor/allocations HTTP/1.1" 201 175 "-" "OpenAPI-Generator//python" 0.000738
+[2020-08-27T17:27:31Z INFO  actix_web::middleware::logger] 127.0.0.1:51690 "GET /payment-api/v1/requestor/allocations/cd17ca46-9ebf-43e2-9388-f1010fed1135 HTTP/1.1" 200 175 "-" "OpenAPI-Generator//python" 0.000535
+[2020-08-27T17:27:35Z INFO  actix_web::middleware::logger] 127.0.0.1:51692 "POST /market-api/v1/demands HTTP/1.1" 201 38 "-" "OpenAPI-Generator//python" 0.725520
+[2020-08-27T17:27:36Z INFO  actix_web::middleware::logger] 127.0.0.1:51692 "GET /market-api/v1/demands/b4632132-277e-443c-bcd5-99aa139206f5/events?timeout=10&maxEvents=10 HTTP/1.1" 200 7245 "-" "OpenAPI-Generator//python" 0.225519
+[2020-08-27T17:27:36Z INFO  actix_web::middleware::logger] 127.0.0.1:51692 "POST /market-api/v1/demands/b4632132-277e-443c-bcd5-99aa139206f5/proposals/933a0bd6-2836-4bf8-80ff-b793aa8e48cf HTTP/1.1" 201 38 "-" "OpenAPI-Generator//python" 0.686758
+[2020-08-27T17:27:37Z INFO  actix_web::middleware::logger] 127.0.0.1:51692 "POST /market-api/v1/demands/b4632132-277e-443c-bcd5-99aa139206f5/proposals/e40afe84-f5e2-4929-a431-0623795f5cb4 HTTP/1.1" 201 38 "-" "OpenAPI-Generator//python" 0.611859
+[2020-08-27T17:27:38Z INFO  actix_web::middleware::logger] 127.0.0.1:51692 "POST /market-api/v1/demands/b4632132-277e-443c-bcd5-99aa139206f5/proposals/bc9b85dd-bb64-4abf-aa66-034972265e7f HTTP/1.1" 201 38 "-" "OpenAPI-Generator//python" 0.610884
+[2020-08-27T17:27:38Z INFO  actix_web::middleware::logger] 127.0.0.1:51692 "POST /market-api/v1/demands/b4632132-277e-443c-bcd5-99aa139206f5/proposals/3ff245ed-3f8e-411e-8b02-26f256a1e325 HTTP/1.1" 201 38 "-" "OpenAPI-Generator//python" 0.529507
+[2020-08-27T17:27:39Z INFO  actix_web::middleware::logger] 127.0.0.1:51692 "POST /market-api/v1/demands/b4632132-277e-443c-bcd5-99aa139206f5/proposals/5d640ba4-d074-4034-a50b-68e0b226c739 HTTP/1.1" 201 38 "-" "OpenAPI-Generator//python" 0.490423
+[2020-08-27T17:27:39Z INFO  actix_web::middleware::logger] 127.0.0.1:51692 "POST /market-api/v1/demands/b4632132-277e-443c-bcd5-99aa139206f5/proposals/4b6bc6d5-84f9-4268-b3ff-f2d9444b1b66 HTTP/1.1" 201 38 "-" "OpenAPI-Generator//python" 0.510189
+[2020-08-27T17:27:40Z INFO  actix_web::middleware::logger] 127.0.0.1:51690 "GET /payment-api/v1/requestor/invoiceEvents?timeout=5&laterThan=2020-08-27T17:27:35.154005%2B00:00 HTTP/1.1" 200 2 "-" "OpenAPI-Generator//python" 5.003891
+[2020-08-27T17:27:40Z INFO  actix_web::middleware::logger] 127.0.0.1:51692 "POST /market-api/v1/demands/b4632132-277e-443c-bcd5-99aa139206f5/proposals/17d99982-5f15-41af-ba0d-e445d28a8b52 HTTP/1.1" 201 38 "-" "OpenAPI-Generator//python" 0.609138
+[2020-08-27T17:27:40Z INFO  actix_web::middleware::logger] 127.0.0.1:51692 "POST /market-api/v1/demands/b4632132-277e-443c-bcd5-99aa139206f5/proposals/5b03a93e-dc2b-4f06-8032-79f8cadd9ab5 HTTP/1.1" 201 38 "-" "OpenAPI-Generator//python" 0.487508
+[2020-08-27T17:27:40Z INFO  actix_web::middleware::logger] 127.0.0.1:51692 "GET /market-api/v1/demands/b4632132-277e-443c-bcd5-99aa139206f5/events?timeout=10&maxEvents=10 HTTP/1.1" 200 4684 "-" "OpenAPI-Generator//python" 0.225166
+[2020-08-27T17:27:41Z INFO  actix_web::middleware::logger] 127.0.0.1:51692 "GET /market-api/v1/demands/b4632132-277e-443c-bcd5-99aa139206f5/events?timeout=10&maxEvents=10 HTTP/1.1" 200 2816 "-" "OpenAPI-Generator//python" 0.225104
+[2020-08-27T17:27:41Z INFO  actix_web::middleware::logger] 127.0.0.1:51694 "POST /market-api/v1/agreements HTTP/1.1" 201 38 "-" "OpenAPI-Generator//python" 0.706555
+[2020-08-27T17:27:42Z INFO  actix_web::middleware::logger] 127.0.0.1:51694 "GET /market-api/v1/agreements/7eefcc07-8551-4a60-8e2f-640810177911 HTTP/1.1" 200 1587 "-" "OpenAPI-Generator//python" 0.236883
+[2020-08-27T17:27:42Z INFO  actix_web::middleware::logger] 127.0.0.1:51694 "POST /market-api/v1/agreements/7eefcc07-8551-4a60-8e2f-640810177911/confirm HTTP/1.1" 200 0 "-" "OpenAPI-Generator//python" 0.517320
+[2020-08-27T17:27:44Z INFO  actix_web::middleware::logger] 127.0.0.1:51694 "POST /market-api/v1/agreements/7eefcc07-8551-4a60-8e2f-640810177911/wait?timeout=90 HTTP/1.1" 200 10 "-" "OpenAPI-Generator//python" 2.060555
+[2020-08-27T17:27:44Z INFO  actix_web::middleware::logger] 127.0.0.1:51694 "GET /market-api/v1/agreements/7eefcc07-8551-4a60-8e2f-640810177911 HTTP/1.1" 200 1587 "-" "OpenAPI-Generator//python" 0.262088
+[2020-08-27T17:27:45Z INFO  actix_web::middleware::logger] 127.0.0.1:51690 "GET /payment-api/v1/requestor/invoiceEvents?timeout=5&laterThan=2020-08-27T17:27:35.154005%2B00:00 HTTP/1.1" 200 2 "-" "OpenAPI-Generator//python" 5.001108
+[2020-08-27T17:27:47Z INFO  actix_web::middleware::logger] 127.0.0.1:51696 "POST /activity-api/v1/activity HTTP/1.1" 200 34 "-" "OpenAPI-Generator//python" 2.164394
+[2020-08-27T17:27:47Z INFO  actix_web::middleware::logger] 127.0.0.1:51694 "POST /market-api/v1/agreements HTTP/1.1" 201 38 "-" "OpenAPI-Generator//python" 0.730474
+[2020-08-27T17:27:47Z INFO  actix_web::middleware::logger] 127.0.0.1:51696 "POST /activity-api/v1/activity/bbfa7f17d7874b1ab6e82241ab5893e9/exec HTTP/1.1" 200 34 "-" "OpenAPI-Generator//python" 0.451719
+[2020-08-27T17:27:48Z INFO  actix_web::middleware::logger] 127.0.0.1:51696 "GET /activity-api/v1/activity/bbfa7f17d7874b1ab6e82241ab5893e9/exec/e23c468085cb45928e5a81b05aac9d65 HTTP/1.1" 200 2 "-" "OpenAPI-Generator//python" 0.644231
+[2020-08-27T17:27:49Z INFO  actix_web::middleware::logger] 127.0.0.1:51694 "GET /market-api/v1/agreements/b71962ee-6430-4438-9781-030c57e84713 HTTP/1.1" 200 1597 "-" "OpenAPI-Generator//python" 1.704922
+[2020-08-27T17:27:49Z INFO  actix_web::middleware::logger] 127.0.0.1:51694 "POST /market-api/v1/agreements/b71962ee-6430-4438-9781-030c57e84713/confirm HTTP/1.1" 200 0 "-" "OpenAPI-Generator//python" 0.490078
+[2020-08-27T17:27:50Z INFO  actix_web::middleware::logger] 127.0.0.1:51694 "POST /market-api/v1/agreements/b71962ee-6430-4438-9781-030c57e84713/wait?timeout=90 HTTP/1.1" 200 10 "-" "OpenAPI-Generator//python" 0.343026
+[2020-08-27T17:27:50Z INFO  actix_web::middleware::logger] 127.0.0.1:51690 "GET /payment-api/v1/requestor/invoiceEvents?timeout=5&laterThan=2020-08-27T17:27:35.154005%2B00:00 HTTP/1.1" 200 2 "-" "OpenAPI-Generator//python" 5.001005
+[2020-08-27T17:27:50Z INFO  actix_web::middleware::logger] 127.0.0.1:51694 "GET /market-api/v1/agreements/b71962ee-6430-4438-9781-030c57e84713 HTTP/1.1" 200 1597 "-" "OpenAPI-Generator//python" 0.235621
+[2020-08-27T17:27:51Z INFO  actix_web::middleware::logger] 127.0.0.1:51692 "GET /market-api/v1/demands/b4632132-277e-443c-bcd5-99aa139206f5/events?timeout=10&maxEvents=10 HTTP/1.1" 200 2 "-" "OpenAPI-Generator//python" 10.225275
+[2020-08-27T17:27:52Z INFO  actix_web::middleware::logger] 127.0.0.1:51692 "POST /market-api/v1/agreements HTTP/1.1" 201 38 "-" "OpenAPI-Generator//python" 0.449771
+[2020-08-27T17:27:52Z INFO  actix_web::middleware::logger] 127.0.0.1:51692 "GET /market-api/v1/agreements/11caba31-8465-4cec-bd52-1f10681a8499 HTTP/1.1" 200 1596 "-" "OpenAPI-Generator//python" 0.224298
+[2020-08-27T17:27:52Z INFO  actix_web::middleware::logger] 127.0.0.1:51692 "POST /market-api/v1/agreements/11caba31-8465-4cec-bd52-1f10681a8499/confirm HTTP/1.1" 200 0 "-" "OpenAPI-Generator//python" 0.224388
+[2020-08-27T17:27:53Z INFO  actix_web::middleware::logger] 127.0.0.1:51692 "POST /market-api/v1/agreements/11caba31-8465-4cec-bd52-1f10681a8499/wait?timeout=90 HTTP/1.1" 200 10 "-" "OpenAPI-Generator//python" 0.225547
+[2020-08-27T17:27:53Z INFO  actix_web::middleware::logger] 127.0.0.1:51696 "POST /activity-api/v1/activity HTTP/1.1" 200 34 "-" "OpenAPI-Generator//python" 2.966417
+[2020-08-27T17:27:53Z INFO  actix_web::middleware::logger] 127.0.0.1:51692 "GET /market-api/v1/agreements/11caba31-8465-4cec-bd52-1f10681a8499 HTTP/1.1" 200 1596 "-" "OpenAPI-Generator//python" 0.225091
+[2020-08-27T17:27:53Z INFO  actix_web::middleware::logger] 127.0.0.1:51696 "POST /activity-api/v1/activity/77b9de692c954e4aa611ba6678723702/exec HTTP/1.1" 200 34 "-" "OpenAPI-Generator//python" 0.281947
+[2020-08-27T17:27:54Z INFO  actix_web::middleware::logger] 127.0.0.1:51696 "GET /activity-api/v1/activity/77b9de692c954e4aa611ba6678723702/exec/8425c3d881034a15b59aa2d1688f3bcf HTTP/1.1" 200 2 "-" "OpenAPI-Generator//python" 0.644412
+[2020-08-27T17:27:55Z INFO  actix_web::middleware::logger] 127.0.0.1:51699 "POST /activity-api/v1/activity HTTP/1.1" 200 34 "-" "OpenAPI-Generator//python" 1.694619
+[2020-08-27T17:27:55Z INFO  actix_web::middleware::logger] 127.0.0.1:51690 "GET /payment-api/v1/requestor/invoiceEvents?timeout=5&laterThan=2020-08-27T17:27:35.154005%2B00:00 HTTP/1.1" 200 2 "-" "OpenAPI-Generator//python" 5.003690
+[2020-08-27T17:27:55Z INFO  actix_web::middleware::logger] 127.0.0.1:51699 "POST /activity-api/v1/activity/0843a2a9b905425ba1b059b355d1d53f/exec HTTP/1.1" 200 34 "-" "OpenAPI-Generator//python" 0.458378
+[2020-08-27T17:27:56Z INFO  actix_web::middleware::logger] 127.0.0.1:51699 "GET /activity-api/v1/activity/0843a2a9b905425ba1b059b355d1d53f/exec/82e5e25757dc48bd8e0a3df1109b9e88 HTTP/1.1" 200 2 "-" "OpenAPI-Generator//python" 0.795799
+[2020-08-27T17:28:00Z INFO  actix_web::middleware::logger] 127.0.0.1:51690 "GET /payment-api/v1/requestor/invoiceEvents?timeout=5&laterThan=2020-08-27T17:27:35.154005%2B00:00 HTTP/1.1" 200 2 "-" "OpenAPI-Generator//python" 5.006843
+[2020-08-27T17:28:02Z INFO  actix_web::middleware::logger] 127.0.0.1:51694 "GET /market-api/v1/demands/b4632132-277e-443c-bcd5-99aa139206f5/events?timeout=10&maxEvents=10 HTTP/1.1" 200 2 "-" "OpenAPI-Generator//python" 10.240701
+[2020-08-27T17:28:02Z INFO  actix_web::middleware::logger] 127.0.0.1:51699 "GET /activity-api/v1/activity/bbfa7f17d7874b1ab6e82241ab5893e9/exec/e23c468085cb45928e5a81b05aac9d65 HTTP/1.1" 200 313420 "-" "OpenAPI-Generator//python" 4.615907
+[2020-08-27T17:28:05Z INFO  actix_web::middleware::logger] 127.0.0.1:51699 "GET /activity-api/v1/activity/bbfa7f17d7874b1ab6e82241ab5893e9/exec/e23c468085cb45928e5a81b05aac9d65 HTTP/1.1" 200 313420 "-" "OpenAPI-Generator//python" 2.097487
+[2020-08-27T17:28:05Z INFO  actix_web::middleware::logger] 127.0.0.1:51690 "GET /payment-api/v1/requestor/invoiceEvents?timeout=5&laterThan=2020-08-27T17:27:35.154005%2B00:00 HTTP/1.1" 200 2 "-" "OpenAPI-Generator//python" 5.001904
+[2020-08-27T17:28:05Z INFO  actix_web::middleware::logger] 127.0.0.1:51700 "GET /activity-api/v1/activity/77b9de692c954e4aa611ba6678723702/exec/8425c3d881034a15b59aa2d1688f3bcf HTTP/1.1" 200 315148 "-" "OpenAPI-Generator//python" 1.755510
+[2020-08-27T17:28:06Z INFO  actix_web::middleware::logger] 127.0.0.1:51700 "GET /activity-api/v1/activity/77b9de692c954e4aa611ba6678723702/exec/8425c3d881034a15b59aa2d1688f3bcf HTTP/1.1" 200 315148 "-" "OpenAPI-Generator//python" 0.909568
+[2020-08-27T17:28:07Z INFO  actix_web::middleware::logger] 127.0.0.1:51699 "GET /activity-api/v1/activity/0843a2a9b905425ba1b059b355d1d53f/exec/82e5e25757dc48bd8e0a3df1109b9e88 HTTP/1.1" 200 315445 "-" "OpenAPI-Generator//python" 0.993466
+[2020-08-27T17:28:08Z INFO  actix_web::middleware::logger] 127.0.0.1:51699 "GET /activity-api/v1/activity/0843a2a9b905425ba1b059b355d1d53f/exec/82e5e25757dc48bd8e0a3df1109b9e88 HTTP/1.1" 200 315445 "-" "OpenAPI-Generator//python" 0.695756
+[2020-08-27T17:28:10Z INFO  actix_web::middleware::logger] 127.0.0.1:51690 "GET /payment-api/v1/requestor/invoiceEvents?timeout=5&laterThan=2020-08-27T17:27:35.154005%2B00:00 HTTP/1.1" 200 2 "-" "OpenAPI-Generator//python" 5.002705
+[2020-08-27T17:28:13Z INFO  actix_web::middleware::logger] 127.0.0.1:51694 "GET /market-api/v1/demands/b4632132-277e-443c-bcd5-99aa139206f5/events?timeout=10&maxEvents=10 HTTP/1.1" 200 2 "-" "OpenAPI-Generator//python" 10.366453
+[2020-08-27T17:28:15Z INFO  actix_web::middleware::logger] 127.0.0.1:51690 "GET /payment-api/v1/requestor/invoiceEvents?timeout=5&laterThan=2020-08-27T17:27:35.154005%2B00:00 HTTP/1.1" 200 2 "-" "OpenAPI-Generator//python" 5.003838
+[2020-08-27T17:28:16Z INFO  actix_web::middleware::logger] 127.0.0.1:51701 "GET /activity-api/v1/activity/bbfa7f17d7874b1ab6e82241ab5893e9/exec/e23c468085cb45928e5a81b05aac9d65 HTTP/1.1" 200 313469 "-" "OpenAPI-Generator//python" 1.402053
+[2020-08-27T17:28:17Z INFO  actix_web::middleware::logger] 127.0.0.1:51701 "POST /activity-api/v1/activity/bbfa7f17d7874b1ab6e82241ab5893e9/exec HTTP/1.1" 200 34 "-" "OpenAPI-Generator//python" 0.617751
+[2020-08-27T17:28:17Z INFO  actix_web::middleware::logger] 127.0.0.1:51701 "GET /activity-api/v1/activity/bbfa7f17d7874b1ab6e82241ab5893e9/exec/979a969092e348f585d8c1d245ed91bc HTTP/1.1" 200 2 "-" "OpenAPI-Generator//python" 0.893416
+[2020-08-27T17:28:17Z INFO  actix_web::middleware::logger] 127.0.0.1:51702 "GET /activity-api/v1/activity/77b9de692c954e4aa611ba6678723702/exec/8425c3d881034a15b59aa2d1688f3bcf HTTP/1.1" 200 315197 "-" "OpenAPI-Generator//python" 1.065980
+[2020-08-27T17:28:18Z INFO  actix_web::middleware::logger] 127.0.0.1:51702 "POST /activity-api/v1/activity/77b9de692c954e4aa611ba6678723702/exec HTTP/1.1" 200 34 "-" "OpenAPI-Generator//python" 0.530195
+[2020-08-27T17:28:18Z INFO  actix_web::middleware::logger] 127.0.0.1:51702 "GET /activity-api/v1/activity/77b9de692c954e4aa611ba6678723702/exec/c1bd2e73899e4b87b6daeafa966d1ef3 HTTP/1.1" 200 2 "-" "OpenAPI-Generator//python" 0.406177
+[2020-08-27T17:28:18Z INFO  actix_web::middleware::logger] 127.0.0.1:51701 "GET /activity-api/v1/activity/0843a2a9b905425ba1b059b355d1d53f/exec/82e5e25757dc48bd8e0a3df1109b9e88 HTTP/1.1" 200 315494 "-" "OpenAPI-Generator//python" 0.830491
+[2020-08-27T17:28:19Z INFO  actix_web::middleware::logger] 127.0.0.1:51701 "POST /activity-api/v1/activity/0843a2a9b905425ba1b059b355d1d53f/exec HTTP/1.1" 200 34 "-" "OpenAPI-Generator//python" 0.596063
+[2020-08-27T17:28:20Z INFO  actix_web::middleware::logger] 127.0.0.1:51701 "GET /activity-api/v1/activity/0843a2a9b905425ba1b059b355d1d53f/exec/91765bb5b0fa44e89769cebe9971e63e HTTP/1.1" 200 2 "-" "OpenAPI-Generator//python" 0.516047
+[2020-08-27T17:28:20Z INFO  actix_web::middleware::logger] 127.0.0.1:51690 "GET /payment-api/v1/requestor/invoiceEvents?timeout=5&laterThan=2020-08-27T17:27:35.154005%2B00:00 HTTP/1.1" 200 2 "-" "OpenAPI-Generator//python" 5.002341
+[2020-08-27T17:28:25Z INFO  actix_web::middleware::logger] 127.0.0.1:51690 "GET /payment-api/v1/requestor/invoiceEvents?timeout=5&laterThan=2020-08-27T17:27:35.154005%2B00:00 HTTP/1.1" 200 2 "-" "OpenAPI-Generator//python" 5.006077
+[2020-08-27T17:28:25Z INFO  actix_web::middleware::logger] 127.0.0.1:51694 "GET /market-api/v1/demands/b4632132-277e-443c-bcd5-99aa139206f5/events?timeout=10&maxEvents=10 HTTP/1.1" 200 2 "-" "OpenAPI-Generator//python" 10.238519
+[2020-08-27T17:28:28Z INFO  actix_web::middleware::logger] 127.0.0.1:51703 "GET /activity-api/v1/activity/bbfa7f17d7874b1ab6e82241ab5893e9/exec/979a969092e348f585d8c1d245ed91bc HTTP/1.1" 200 314832 "-" "OpenAPI-Generator//python" 0.991180
+[2020-08-27T17:28:29Z INFO  actix_web::middleware::logger] 127.0.0.1:51704 "GET /activity-api/v1/activity/77b9de692c954e4aa611ba6678723702/exec/c1bd2e73899e4b87b6daeafa966d1ef3 HTTP/1.1" 200 314571 "-" "OpenAPI-Generator//python" 0.675671
+[2020-08-27T17:28:30Z INFO  actix_web::middleware::logger] 127.0.0.1:51704 "GET /activity-api/v1/activity/77b9de692c954e4aa611ba6678723702/exec/c1bd2e73899e4b87b6daeafa966d1ef3 HTTP/1.1" 200 314571 "-" "OpenAPI-Generator//python" 0.527028
+[2020-08-27T17:28:30Z INFO  actix_web::middleware::logger] 127.0.0.1:51690 "GET /payment-api/v1/requestor/invoiceEvents?timeout=5&laterThan=2020-08-27T17:27:35.154005%2B00:00 HTTP/1.1" 200 2 "-" "OpenAPI-Generator//python" 5.009500
+[2020-08-27T17:28:30Z INFO  actix_web::middleware::logger] 127.0.0.1:51703 "GET /activity-api/v1/activity/0843a2a9b905425ba1b059b355d1d53f/exec/91765bb5b0fa44e89769cebe9971e63e HTTP/1.1" 200 314816 "-" "OpenAPI-Generator//python" 0.554906
+[2020-08-27T17:28:31Z INFO  actix_web::middleware::logger] 127.0.0.1:51703 "GET /activity-api/v1/activity/0843a2a9b905425ba1b059b355d1d53f/exec/91765bb5b0fa44e89769cebe9971e63e HTTP/1.1" 200 314816 "-" "OpenAPI-Generator//python" 0.466417
+[2020-08-27T17:28:35Z INFO  actix_web::middleware::logger] 127.0.0.1:51690 "GET /payment-api/v1/requestor/invoiceEvents?timeout=5&laterThan=2020-08-27T17:27:35.154005%2B00:00 HTTP/1.1" 200 2 "-" "OpenAPI-Generator//python" 5.017399
+[2020-08-27T17:28:36Z INFO  actix_web::middleware::logger] 127.0.0.1:51694 "GET /market-api/v1/demands/b4632132-277e-443c-bcd5-99aa139206f5/events?timeout=10&maxEvents=10 HTTP/1.1" 200 2 "-" "OpenAPI-Generator//python" 10.237918
+[2020-08-27T17:28:40Z INFO  actix_web::middleware::logger] 127.0.0.1:51690 "GET /payment-api/v1/requestor/invoiceEvents?timeout=5&laterThan=2020-08-27T17:27:35.154005%2B00:00 HTTP/1.1" 200 2 "-" "OpenAPI-Generator//python" 5.001032
+[2020-08-27T17:28:41Z INFO  actix_web::middleware::logger] 127.0.0.1:51705 "GET /activity-api/v1/activity/77b9de692c954e4aa611ba6678723702/exec/c1bd2e73899e4b87b6daeafa966d1ef3 HTTP/1.1" 200 314620 "-" "OpenAPI-Generator//python" 1.388427
+[2020-08-27T17:28:41Z INFO  actix_web::middleware::logger] 127.0.0.1:51706 "GET /activity-api/v1/activity/0843a2a9b905425ba1b059b355d1d53f/exec/91765bb5b0fa44e89769cebe9971e63e HTTP/1.1" 200 314865 "-" "OpenAPI-Generator//python" 0.689672
+[2020-08-27T17:28:45Z INFO  actix_web::middleware::logger] 127.0.0.1:51690 "GET /payment-api/v1/requestor/invoiceEvents?timeout=5&laterThan=2020-08-27T17:27:35.154005%2B00:00 HTTP/1.1" 200 2 "-" "OpenAPI-Generator//python" 5.005870
+[2020-08-27T17:28:45Z INFO  actix_web::middleware::logger] 127.0.0.1:51709 "DELETE /market-api/v1/demands/b4632132-277e-443c-bcd5-99aa139206f5 HTTP/1.1" 204 0 "-" "OpenAPI-Generator//python" 0.444291
+[2020-08-27T17:28:46Z INFO  actix_web::middleware::logger] 127.0.0.1:51706 "DELETE /activity-api/v1/activity/0843a2a9b905425ba1b059b355d1d53f HTTP/1.1" 200 4 "-" "OpenAPI-Generator//python" 1.046402
+[2020-08-27T17:28:46Z INFO  actix_web::middleware::logger] 127.0.0.1:51690 "GET /payment-api/v1/requestor/invoiceEvents?timeout=5&laterThan=2020-08-27T17:27:35.154005%2B00:00 HTTP/1.1" 200 231 "-" "OpenAPI-Generator//python" 1.005841
+[2020-08-27T17:28:46Z INFO  actix_web::middleware::logger] 127.0.0.1:51690 "GET /payment-api/v1/requestor/invoices/c40151da-656c-42d5-a198-da36fd3c678d HTTP/1.1" 200 524 "-" "OpenAPI-Generator//python" 0.000419
+[2020-08-27T17:28:46Z INFO  actix_web::middleware::logger] 127.0.0.1:51707 "DELETE /activity-api/v1/activity/77b9de692c954e4aa611ba6678723702 HTTP/1.1" 200 4 "-" "OpenAPI-Generator//python" 1.333583
+[2020-08-27T17:28:46Z INFO  actix_web::middleware::logger] 127.0.0.1:51708 "DELETE /activity-api/v1/activity/bbfa7f17d7874b1ab6e82241ab5893e9 HTTP/1.1" 200 4 "-" "OpenAPI-Generator//python" 1.328736
+[2020-08-27T17:28:46Z INFO  ya_payment_driver::service] schedule payment: SchedulePayment { invoice_id: "c40151da-656c-42d5-a198-da36fd3c678d", amount: PaymentAmount { base_currency_amount: BigDecimal("0.1066170432800000"), gas_amount: None }, sender: "0x15714ca8a4cd0a18ecc8a1ef875afcd4d6604fef", recipient: "0xdf18d50a0b1f4007432eb42fad11ff706b40cc1b", due_date: 2020-08-27T17:28:45.852233820Z }
+[2020-08-27T17:28:46Z INFO  ya_payment_driver::service] get payment status: GetPaymentStatus("c40151da-656c-42d5-a198-da36fd3c678d")
+[2020-08-27T17:28:46Z INFO  actix_web::middleware::logger] 127.0.0.1:51690 "POST /payment-api/v1/requestor/invoices/c40151da-656c-42d5-a198-da36fd3c678d/accept HTTP/1.1" 200 4 "-" "OpenAPI-Generator//python" 0.581367
+[2020-08-27T17:28:46Z INFO  actix_web::middleware::logger] 127.0.0.1:51690 "GET /payment-api/v1/requestor/invoices/8403a28b-51ae-45a1-b7d8-e906f5ebae43 HTTP/1.1" 200 524 "-" "OpenAPI-Generator//python" 0.000685
+[2020-08-27T17:28:47Z INFO  ya_payment_driver::service] schedule payment: SchedulePayment { invoice_id: "8403a28b-51ae-45a1-b7d8-e906f5ebae43", amount: PaymentAmount { base_currency_amount: BigDecimal("0.1088129871280000"), gas_amount: None }, sender: "0x15714ca8a4cd0a18ecc8a1ef875afcd4d6604fef", recipient: "0xf554f79cf0787008e12964519f28c0100343764b", due_date: 2020-08-27T17:28:46.059993209Z }
+[2020-08-27T17:28:47Z INFO  ya_payment_driver::service] get payment status: GetPaymentStatus("8403a28b-51ae-45a1-b7d8-e906f5ebae43")
+[2020-08-27T17:28:47Z INFO  actix_web::middleware::logger] 127.0.0.1:51690 "POST /payment-api/v1/requestor/invoices/8403a28b-51ae-45a1-b7d8-e906f5ebae43/accept HTTP/1.1" 200 4 "-" "OpenAPI-Generator//python" 0.546404
+[2020-08-27T17:28:47Z INFO  actix_web::middleware::logger] 127.0.0.1:51690 "GET /payment-api/v1/requestor/invoiceEvents?timeout=5&laterThan=2020-08-27T17:28:46.245000%2B00:00 HTTP/1.1" 200 116 "-" "OpenAPI-Generator//python" 0.000458
+[2020-08-27T17:28:47Z INFO  actix_web::middleware::logger] 127.0.0.1:51690 "GET /payment-api/v1/requestor/invoices/064e6b50-1315-46e4-afe9-e0736c929ace HTTP/1.1" 200 524 "-" "OpenAPI-Generator//python" 0.000320
+[2020-08-27T17:28:47Z INFO  ya_payment_driver::service] schedule payment: SchedulePayment { invoice_id: "064e6b50-1315-46e4-afe9-e0736c929ace", amount: PaymentAmount { base_currency_amount: BigDecimal("0.1093468766560000"), gas_amount: None }, sender: "0x15714ca8a4cd0a18ecc8a1ef875afcd4d6604fef", recipient: "0x82b5389e3a0b5800918c01ec05afb93451e0d41d", due_date: 2020-08-27T17:28:46.688551360Z }
+[2020-08-27T17:28:47Z INFO  ya_payment_driver::service] get payment status: GetPaymentStatus("064e6b50-1315-46e4-afe9-e0736c929ace")
+[2020-08-27T17:28:47Z INFO  actix_web::middleware::logger] 127.0.0.1:51690 "POST /payment-api/v1/requestor/invoices/064e6b50-1315-46e4-afe9-e0736c929ace/accept HTTP/1.1" 200 4 "-" "OpenAPI-Generator//python" 0.281200
+[2020-08-27T17:28:47Z INFO  actix_web::middleware::logger] 127.0.0.1:51690 "DELETE /payment-api/v1/requestor/allocations/cd17ca46-9ebf-43e2-9388-f1010fed1135 HTTP/1.1" 200 4 "-" "OpenAPI-Generator//python" 0.000766
+[2020-08-27T17:28:47Z INFO  actix_web::middleware::logger] 127.0.0.1:51694 "GET /market-api/v1/demands/b4632132-277e-443c-bcd5-99aa139206f5/events?timeout=10&maxEvents=10 HTTP/1.1" 200 2 "-" "OpenAPI-Generator//python" 10.244172
+[2020-08-27T17:28:51Z INFO  ya_payment_driver::service] get payment status: GetPaymentStatus("c40151da-656c-42d5-a198-da36fd3c678d")
+[2020-08-27T17:28:52Z INFO  ya_payment_driver::service] get payment status: GetPaymentStatus("8403a28b-51ae-45a1-b7d8-e906f5ebae43")
+[2020-08-27T17:28:52Z INFO  ya_payment_driver::service] get payment status: GetPaymentStatus("064e6b50-1315-46e4-afe9-e0736c929ace")
+[2020-08-27T17:28:56Z INFO  ya_payment_driver::service] get payment status: GetPaymentStatus("c40151da-656c-42d5-a198-da36fd3c678d")
+[2020-08-27T17:28:57Z INFO  ya_payment_driver::service] get payment status: GetPaymentStatus("8403a28b-51ae-45a1-b7d8-e906f5ebae43")
+[2020-08-27T17:28:57Z INFO  ya_payment_driver::service] get payment status: GetPaymentStatus("064e6b50-1315-46e4-afe9-e0736c929ace")
+[2020-08-27T17:29:01Z INFO  ya_payment_driver::service] get payment status: GetPaymentStatus("c40151da-656c-42d5-a198-da36fd3c678d")
+[2020-08-27T17:29:01Z INFO  ya_payment_driver::gnt::sender] Processing payment: PaymentEntity { invoice_id: "c40151da-656c-42d5-a198-da36fd3c678d", amount: "000000000000000000000000000000000000000000000000017ac7a2cfb4f400", gas: "0000000000000000000000000000000000000000000000000000000000000000", sender: "0x15714ca8a4cd0a18ecc8a1ef875afcd4d6604fef", recipient: "0xdf18d50a0b1f4007432eb42fad11ff706b40cc1b", payment_due_date: 2020-08-27T17:28:45.852233820, status: 1, tx_id: None }
+[2020-08-27T17:29:02Z INFO  ya_payment_driver::service] get payment status: GetPaymentStatus("8403a28b-51ae-45a1-b7d8-e906f5ebae43")
+[2020-08-27T17:29:02Z INFO  ya_payment_driver::service] get payment status: GetPaymentStatus("064e6b50-1315-46e4-afe9-e0736c929ace")
+[2020-08-27T17:29:02Z INFO  ya_payment_driver::gnt::sender] Processing payment: PaymentEntity { invoice_id: "8403a28b-51ae-45a1-b7d8-e906f5ebae43", amount: "000000000000000000000000000000000000000000000000018294d5d4b6ae00", gas: "0000000000000000000000000000000000000000000000000000000000000000", sender: "0x15714ca8a4cd0a18ecc8a1ef875afcd4d6604fef", recipient: "0xf554f79cf0787008e12964519f28c0100343764b", payment_due_date: 2020-08-27T17:28:46.059993209, status: 1, tx_id: None }
+[2020-08-27T17:29:03Z INFO  ya_payment_driver::gnt::sender] Processing payment: PaymentEntity { invoice_id: "064e6b50-1315-46e4-afe9-e0736c929ace", amount: "00000000000000000000000000000000000000000000000001847a67ac611c00", gas: "0000000000000000000000000000000000000000000000000000000000000000", sender: "0x15714ca8a4cd0a18ecc8a1ef875afcd4d6604fef", recipient: "0x82b5389e3a0b5800918c01ec05afb93451e0d41d", payment_due_date: 2020-08-27T17:28:46.688551360, status: 1, tx_id: None }
+[2020-08-27T17:29:06Z INFO  ya_payment_driver::service] get payment status: GetPaymentStatus("c40151da-656c-42d5-a198-da36fd3c678d")
+[2020-08-27T17:29:07Z INFO  ya_payment_driver::service] get payment status: GetPaymentStatus("8403a28b-51ae-45a1-b7d8-e906f5ebae43")
+[2020-08-27T17:29:07Z INFO  ya_payment_driver::service] get payment status: GetPaymentStatus("064e6b50-1315-46e4-afe9-e0736c929ace")
+[2020-08-27T17:29:11Z INFO  ya_payment_driver::service] get payment status: GetPaymentStatus("c40151da-656c-42d5-a198-da36fd3c678d")
+[2020-08-27T17:29:12Z INFO  ya_payment_driver::service] get payment status: GetPaymentStatus("8403a28b-51ae-45a1-b7d8-e906f5ebae43")
+[2020-08-27T17:29:12Z INFO  ya_payment_driver::service] get payment status: GetPaymentStatus("064e6b50-1315-46e4-afe9-e0736c929ace")
+[2020-08-27T17:29:16Z INFO  ya_payment_driver::service] get payment status: GetPaymentStatus("c40151da-656c-42d5-a198-da36fd3c678d")
+[2020-08-27T17:29:17Z INFO  ya_payment_driver::service] get payment status: GetPaymentStatus("8403a28b-51ae-45a1-b7d8-e906f5ebae43")
+[2020-08-27T17:29:17Z INFO  ya_payment_driver::service] get payment status: GetPaymentStatus("064e6b50-1315-46e4-afe9-e0736c929ace")
+[2020-08-27T17:29:21Z INFO  ya_payment_driver::service] get payment status: GetPaymentStatus("c40151da-656c-42d5-a198-da36fd3c678d")
+[2020-08-27T17:29:22Z INFO  ya_payment_driver::service] get payment status: GetPaymentStatus("8403a28b-51ae-45a1-b7d8-e906f5ebae43")
+[2020-08-27T17:29:22Z INFO  ya_payment_driver::service] get payment status: GetPaymentStatus("064e6b50-1315-46e4-afe9-e0736c929ace")
+[2020-08-27T17:29:26Z INFO  ya_payment_driver::service] get payment status: GetPaymentStatus("c40151da-656c-42d5-a198-da36fd3c678d")
+[2020-08-27T17:29:27Z INFO  ya_payment_driver::service] get payment status: GetPaymentStatus("8403a28b-51ae-45a1-b7d8-e906f5ebae43")
+[2020-08-27T17:29:27Z INFO  ya_payment_driver::service] get payment status: GetPaymentStatus("064e6b50-1315-46e4-afe9-e0736c929ace")
+[2020-08-27T17:29:31Z INFO  ya_payment_driver::service] get payment status: GetPaymentStatus("c40151da-656c-42d5-a198-da36fd3c678d")
+[2020-08-27T17:29:32Z INFO  ya_payment_driver::service] get payment status: GetPaymentStatus("8403a28b-51ae-45a1-b7d8-e906f5ebae43")
+[2020-08-27T17:29:32Z INFO  ya_payment_driver::gnt::sender] tx_id="5a3463f7760174146ff4a88ae45ea2505ec277ce1d7d93964c7ec3098ad002e840b5ff734c54cbd7b2599fb9e19dd5bba9b747011152054cabc6908e5be6bcab", confirmations=2
+[2020-08-27T17:29:32Z INFO  ya_payment_driver::gnt::sender] tx_id="265c280add32a048e02e91406f266bc0ff93707dd2f86b4ac5e1597ab2d4beca723571c4b74c00049599d9e714e5769122268a64a15f9661c528af194ee57bc7", confirmations=2
+[2020-08-27T17:29:32Z INFO  ya_payment_driver::service] get payment status: GetPaymentStatus("064e6b50-1315-46e4-afe9-e0736c929ace")
+[2020-08-27T17:29:32Z INFO  ya_payment_driver::gnt::sender] tx_id="0c4fd027c4e8a3a04e84df5c52201d2718ac020612439ed6cf41287aa9a5a7dc9c16d7c8cfbb664099f290fd2c417232117f129df91465e7140562290b80005a", confirmations=2
+[2020-08-27T17:29:36Z INFO  ya_payment_driver::service] get payment status: GetPaymentStatus("c40151da-656c-42d5-a198-da36fd3c678d")
+[2020-08-27T17:29:37Z INFO  ya_payment_driver::service] get payment status: GetPaymentStatus("8403a28b-51ae-45a1-b7d8-e906f5ebae43")
+[2020-08-27T17:29:37Z INFO  ya_payment_driver::service] get payment status: GetPaymentStatus("064e6b50-1315-46e4-afe9-e0736c929ace")
+[2020-08-27T17:29:41Z INFO  ya_payment_driver::service] get payment status: GetPaymentStatus("c40151da-656c-42d5-a198-da36fd3c678d")
+[2020-08-27T17:29:42Z INFO  ya_payment_driver::service] get payment status: GetPaymentStatus("8403a28b-51ae-45a1-b7d8-e906f5ebae43")
+[2020-08-27T17:29:42Z INFO  ya_payment_driver::service] get payment status: GetPaymentStatus("064e6b50-1315-46e4-afe9-e0736c929ace")
+[2020-08-27T17:29:46Z INFO  ya_payment_driver::service] get payment status: GetPaymentStatus("c40151da-656c-42d5-a198-da36fd3c678d")
+[2020-08-27T17:29:47Z INFO  ya_payment_driver::service] get payment status: GetPaymentStatus("8403a28b-51ae-45a1-b7d8-e906f5ebae43")
+[2020-08-27T17:29:47Z INFO  ya_payment_driver::service] get payment status: GetPaymentStatus("064e6b50-1315-46e4-afe9-e0736c929ace")
+[2020-08-27T17:29:51Z INFO  ya_payment_driver::service] get payment status: GetPaymentStatus("c40151da-656c-42d5-a198-da36fd3c678d")
+[2020-08-27T17:29:52Z INFO  ya_payment_driver::service] get payment status: GetPaymentStatus("8403a28b-51ae-45a1-b7d8-e906f5ebae43")
+[2020-08-27T17:29:52Z INFO  ya_payment_driver::service] get payment status: GetPaymentStatus("064e6b50-1315-46e4-afe9-e0736c929ace")
+[2020-08-27T17:29:56Z INFO  ya_payment_driver::service] get payment status: GetPaymentStatus("c40151da-656c-42d5-a198-da36fd3c678d")
+[2020-08-27T17:29:57Z INFO  ya_payment_driver::service] get payment status: GetPaymentStatus("8403a28b-51ae-45a1-b7d8-e906f5ebae43")
+[2020-08-27T17:29:57Z INFO  ya_payment_driver::service] get payment status: GetPaymentStatus("064e6b50-1315-46e4-afe9-e0736c929ace")
+[2020-08-27T17:30:01Z INFO  ya_payment_driver::service] get payment status: GetPaymentStatus("c40151da-656c-42d5-a198-da36fd3c678d")
+[2020-08-27T17:30:02Z INFO  ya_payment_driver::service] get payment status: GetPaymentStatus("8403a28b-51ae-45a1-b7d8-e906f5ebae43")
+[2020-08-27T17:30:02Z INFO  ya_payment_driver::gnt::sender] tx_id="5a3463f7760174146ff4a88ae45ea2505ec277ce1d7d93964c7ec3098ad002e840b5ff734c54cbd7b2599fb9e19dd5bba9b747011152054cabc6908e5be6bcab", confirmations=4
+[2020-08-27T17:30:02Z INFO  ya_payment_driver::gnt::sender] tx_id="265c280add32a048e02e91406f266bc0ff93707dd2f86b4ac5e1597ab2d4beca723571c4b74c00049599d9e714e5769122268a64a15f9661c528af194ee57bc7", confirmations=4
+[2020-08-27T17:30:02Z INFO  ya_payment_driver::service] get payment status: GetPaymentStatus("064e6b50-1315-46e4-afe9-e0736c929ace")
+[2020-08-27T17:30:02Z INFO  ya_payment_driver::gnt::sender] tx_id="0c4fd027c4e8a3a04e84df5c52201d2718ac020612439ed6cf41287aa9a5a7dc9c16d7c8cfbb664099f290fd2c417232117f129df91465e7140562290b80005a", confirmations=4
+[2020-08-27T17:30:06Z INFO  ya_payment_driver::service] get payment status: GetPaymentStatus("c40151da-656c-42d5-a198-da36fd3c678d")
+[2020-08-27T17:30:07Z INFO  ya_payment_driver::service] get payment status: GetPaymentStatus("8403a28b-51ae-45a1-b7d8-e906f5ebae43")
+[2020-08-27T17:30:07Z INFO  ya_payment_driver::service] get payment status: GetPaymentStatus("064e6b50-1315-46e4-afe9-e0736c929ace")
+[2020-08-27T17:30:11Z INFO  ya_payment_driver::service] get payment status: GetPaymentStatus("c40151da-656c-42d5-a198-da36fd3c678d")
+[2020-08-27T17:30:12Z INFO  ya_payment_driver::service] get payment status: GetPaymentStatus("8403a28b-51ae-45a1-b7d8-e906f5ebae43")
+[2020-08-27T17:30:12Z INFO  ya_payment_driver::service] get payment status: GetPaymentStatus("064e6b50-1315-46e4-afe9-e0736c929ace")
+[2020-08-27T17:30:16Z INFO  ya_payment_driver::service] get payment status: GetPaymentStatus("c40151da-656c-42d5-a198-da36fd3c678d")
+[2020-08-27T17:30:17Z INFO  ya_payment_driver::service] get payment status: GetPaymentStatus("8403a28b-51ae-45a1-b7d8-e906f5ebae43")
+[2020-08-27T17:30:17Z INFO  ya_payment_driver::service] get payment status: GetPaymentStatus("064e6b50-1315-46e4-afe9-e0736c929ace")
+[2020-08-27T17:30:21Z INFO  ya_payment_driver::service] get payment status: GetPaymentStatus("c40151da-656c-42d5-a198-da36fd3c678d")
+[2020-08-27T17:30:22Z INFO  ya_payment_driver::service] get payment status: GetPaymentStatus("8403a28b-51ae-45a1-b7d8-e906f5ebae43")
+[2020-08-27T17:30:22Z INFO  ya_payment_driver::service] get payment status: GetPaymentStatus("064e6b50-1315-46e4-afe9-e0736c929ace")
+[2020-08-27T17:30:26Z INFO  ya_payment_driver::service] get payment status: GetPaymentStatus("c40151da-656c-42d5-a198-da36fd3c678d")
+[2020-08-27T17:30:27Z INFO  ya_payment_driver::service] get payment status: GetPaymentStatus("8403a28b-51ae-45a1-b7d8-e906f5ebae43")
+[2020-08-27T17:30:27Z INFO  ya_payment_driver::service] get payment status: GetPaymentStatus("064e6b50-1315-46e4-afe9-e0736c929ace")
+[2020-08-27T17:30:31Z INFO  ya_payment_driver::service] get payment status: GetPaymentStatus("c40151da-656c-42d5-a198-da36fd3c678d")
+[2020-08-27T17:30:32Z INFO  ya_payment_driver::gnt::sender] tx_id="5a3463f7760174146ff4a88ae45ea2505ec277ce1d7d93964c7ec3098ad002e840b5ff734c54cbd7b2599fb9e19dd5bba9b747011152054cabc6908e5be6bcab", confirmations=6
+[2020-08-27T17:30:32Z INFO  ya_payment_driver::service] get payment status: GetPaymentStatus("8403a28b-51ae-45a1-b7d8-e906f5ebae43")
+[2020-08-27T17:30:32Z INFO  ya_payment_driver::gnt::sender] tx_id="265c280add32a048e02e91406f266bc0ff93707dd2f86b4ac5e1597ab2d4beca723571c4b74c00049599d9e714e5769122268a64a15f9661c528af194ee57bc7", confirmations=6
+[2020-08-27T17:30:32Z INFO  ya_payment_driver::service] get payment status: GetPaymentStatus("064e6b50-1315-46e4-afe9-e0736c929ace")
+[2020-08-27T17:30:32Z INFO  ya_payment_driver::gnt::sender] tx_id="0c4fd027c4e8a3a04e84df5c52201d2718ac020612439ed6cf41287aa9a5a7dc9c16d7c8cfbb664099f290fd2c417232117f129df91465e7140562290b80005a", confirmations=6
+[2020-08-27T17:30:33Z INFO  ya_payment_driver::gnt::sender] tx_id=5a3463f7760174146ff4a88ae45ea2505ec277ce1d7d93964c7ec3098ad002e840b5ff734c54cbd7b2599fb9e19dd5bba9b747011152054cabc6908e5be6bcab, processed
+[2020-08-27T17:30:33Z INFO  ya_payment_driver::gnt::sender] tx_id=265c280add32a048e02e91406f266bc0ff93707dd2f86b4ac5e1597ab2d4beca723571c4b74c00049599d9e714e5769122268a64a15f9661c528af194ee57bc7, processed
+[2020-08-27T17:30:33Z INFO  ya_payment_driver::gnt::sender] tx_id=0c4fd027c4e8a3a04e84df5c52201d2718ac020612439ed6cf41287aa9a5a7dc9c16d7c8cfbb664099f290fd2c417232117f129df91465e7140562290b80005a, processed
+[2020-08-27T17:30:36Z INFO  ya_payment_driver::service] get payment status: GetPaymentStatus("c40151da-656c-42d5-a198-da36fd3c678d")
+[2020-08-27T17:30:36Z ERROR ya_payment::processor] Payment failed: Database error: Query error: FOREIGN KEY constraint failed
+[2020-08-27T17:30:37Z INFO  ya_payment_driver::service] get payment status: GetPaymentStatus("8403a28b-51ae-45a1-b7d8-e906f5ebae43")
+[2020-08-27T17:30:37Z ERROR ya_payment::processor] Payment failed: Database error: Query error: FOREIGN KEY constraint failed
+[2020-08-27T17:30:37Z INFO  ya_payment_driver::service] get payment status: GetPaymentStatus("064e6b50-1315-46e4-afe9-e0736c929ace")
+[2020-08-27T17:30:37Z ERROR ya_payment::processor] Payment failed: Database error: Query error: FOREIGN KEY constraint failed
+[2020-08-27T17:32:31Z ERROR r2d2] database is locked
+[2020-08-27T17:38:31Z ERROR r2d2] database is locked
+[2020-08-27T17:39:01Z ERROR r2d2] database is locked
+[2020-08-27T17:39:01Z ERROR r2d2] database is locked
+[2020-08-27T17:40:01Z ERROR r2d2] database is locked
+[2020-08-27T17:53:01Z ERROR r2d2] database is locked
+^C[2020-08-27T18:03:53Z INFO  actix_server::builder] SIGINT received, exiting
+[2020-08-27T18:03:53Z INFO  yagna] yagna service finished!
+
+yagna daemon successfully finished.
+[2020-08-27T18:03:53Z INFO  ya_service_bus::connection] stopped connection to gsb
+[2020-08-27T18:03:53Z INFO  ya_service_bus::connection] stopped connection to gsb
+ canok@Azazel  ~  
+
+Last login: Thu Aug 27 14:20:04 on ttys000
+ canok@Azazel  ~  yagna app-key create requestor
+f6f446e202b84a7c9c6659d4d22fe3e3
+ canok@Azazel  ~  yagna payment init -r
+ canok@Azazel  ~  yagna payment status
 ---
 amount: "1000"
 incoming:
@@ -21,38 +276,46 @@ outgoing:
   rejected: "0"
   requested: "0"
 reserved: "0"
-gabriel@gabriel-G3-3579:~/Desktop/golem-linux-v0.3.3-alpha.5$ python3 -m venv ~/.envs/yagna-python-tutorial
-gabriel@gabriel-G3-3579:~/Desktop/golem-linux-v0.3.3-alpha.5$ source ~/.envs/yagna-python-tutorial/bin/activate
-(yagna-python-tutorial) gabriel@gabriel-G3-3579:~/Desktop/golem-linux-v0.3.3-alpha.5$ pip3 install yapapi certifi
+ canok@Azazel  ~  cd Documents 
+ canok@Azazel  ~/Documents  virtualenv yagpy
+source yagpy/bin/activate
+created virtual environment CPython3.7.4.final.0-64 in 10619ms
+  creator CPython3Posix(dest=/Users/canok/Documents/yagpy, clear=False, global=False)
+  seeder FromAppData(download=True, pip=latest, setuptools=latest, wheel=latest, via=copy, app_data_dir=/Users/canok/Library/Application Support/virtualenv/seed-app-data/v1.0.1)
+  activators BashActivator,CShellActivator,FishActivator,PowerShellActivator,PythonActivator,XonshActivator
+ canok@Azazel  ~/Documents  source yagpy/bin/activate
+(yagpy)  canok@Azazel  ~/Documents  pip3 install yapapi certifi
 Collecting yapapi
   Downloading yapapi-0.1.5-py3-none-any.whl (32 kB)
 Collecting certifi
   Using cached certifi-2020.6.20-py2.py3-none-any.whl (156 kB)
-Collecting typing_extensions<4.0.0,>=3.7.4
-  Downloading typing_extensions-3.7.4.3-py3-none-any.whl (22 kB)
-Collecting urllib3<2.0.0,>=1.25.9
-  Using cached urllib3-1.25.10-py2.py3-none-any.whl (127 kB)
 Collecting aiohttp<4.0,>=3.6
-  Using cached aiohttp-3.6.2-py3-none-any.whl (441 kB)
-Collecting ya-aioclient<0.2.0,>=0.1.1
-  Downloading ya_aioclient-0.1.2-py3-none-any.whl (172 kB)
-     |████████████████████████████████| 172 kB 3.0 MB/s 
+  Downloading aiohttp-3.6.2-cp37-cp37m-macosx_10_13_x86_64.whl (642 kB)
+     |████████████████████████████████| 642 kB 4.7 MB/s 
 Collecting jsonrpc-base<2.0.0,>=1.0.3
   Downloading jsonrpc-base-1.1.0.tar.gz (5.5 kB)
 Collecting async_exit_stack<2.0.0,>=1.0.1
   Downloading async_exit_stack-1.0.1-py3-none-any.whl (4.7 kB)
-Collecting multidict<5.0,>=4.5
-  Using cached multidict-4.7.6-cp38-cp38-manylinux1_x86_64.whl (162 kB)
+Collecting ya-aioclient<0.2.0,>=0.1.1
+  Downloading ya_aioclient-0.1.2-py3-none-any.whl (172 kB)
+     |████████████████████████████████| 172 kB 7.9 MB/s 
+Collecting typing_extensions<4.0.0,>=3.7.4
+  Downloading typing_extensions-3.7.4.3-py3-none-any.whl (22 kB)
+Collecting urllib3<2.0.0,>=1.25.9
+  Using cached urllib3-1.25.10-py2.py3-none-any.whl (127 kB)
+Collecting yarl<2.0,>=1.0
+  Downloading yarl-1.5.1-cp37-cp37m-macosx_10_14_x86_64.whl (127 kB)
+     |████████████████████████████████| 127 kB 8.1 MB/s 
 Collecting chardet<4.0,>=2.0
   Using cached chardet-3.0.4-py2.py3-none-any.whl (133 kB)
 Collecting attrs>=17.3.0
   Downloading attrs-20.1.0-py2.py3-none-any.whl (49 kB)
-     |████████████████████████████████| 49 kB 8.2 MB/s 
-Collecting yarl<2.0,>=1.0
-  Downloading yarl-1.5.1-cp38-cp38-manylinux1_x86_64.whl (262 kB)
-     |████████████████████████████████| 262 kB 5.6 MB/s 
+     |████████████████████████████████| 49 kB 2.9 MB/s 
 Collecting async-timeout<4.0,>=3.0
-  Using cached async_timeout-3.0.1-py3-none-any.whl (8.2 kB)
+  Downloading async_timeout-3.0.1-py3-none-any.whl (8.2 kB)
+Collecting multidict<5.0,>=4.5
+  Downloading multidict-4.7.6-cp37-cp37m-macosx_10_14_x86_64.whl (48 kB)
+     |████████████████████████████████| 48 kB 3.7 MB/s 
 Collecting python-dateutil<3.0.0,>=2.8.1
   Using cached python_dateutil-2.8.1-py2.py3-none-any.whl (227 kB)
 Collecting idna>=2.0
@@ -60,43 +323,25 @@ Collecting idna>=2.0
 Collecting six>=1.5
   Using cached six-1.15.0-py2.py3-none-any.whl (10 kB)
 Building wheels for collected packages: jsonrpc-base
-  Building wheel for jsonrpc-base (setup.py) ... error
-  ERROR: Command errored out with exit status 1:
-   command: /home/gabriel/.envs/yagna-python-tutorial/bin/python3 -u -c 'import sys, setuptools, tokenize; sys.argv[0] = '"'"'/tmp/pip-install-5tmu7tz3/jsonrpc-base/setup.py'"'"'; __file__='"'"'/tmp/pip-install-5tmu7tz3/jsonrpc-base/setup.py'"'"';f=getattr(tokenize, '"'"'open'"'"', open)(__file__);code=f.read().replace('"'"'\r\n'"'"', '"'"'\n'"'"');f.close();exec(compile(code, __file__, '"'"'exec'"'"'))' bdist_wheel -d /tmp/pip-wheel-b02yef5h
-       cwd: /tmp/pip-install-5tmu7tz3/jsonrpc-base/
-  Complete output (6 lines):
-  usage: setup.py [global_opts] cmd1 [cmd1_opts] [cmd2 [cmd2_opts] ...]
-     or: setup.py --help [cmd1 cmd2 ...]
-     or: setup.py --help-commands
-     or: setup.py cmd --help
-  
-  error: invalid command 'bdist_wheel'
-  ----------------------------------------
-  ERROR: Failed building wheel for jsonrpc-base
-  Running setup.py clean for jsonrpc-base
-Failed to build jsonrpc-base
-Installing collected packages: typing-extensions, urllib3, multidict, chardet, attrs, idna, yarl, async-timeout, aiohttp, six, python-dateutil, ya-aioclient, jsonrpc-base, async-exit-stack, yapapi, certifi
-    Running setup.py install for jsonrpc-base ... done
+  Building wheel for jsonrpc-base (setup.py) ... done
+  Created wheel for jsonrpc-base: filename=jsonrpc_base-1.1.0-py3-none-any.whl size=5835 sha256=a0bb68ee0f0e9cd627747fb900c9f718ade7676a4bfacd848ba30e02e896aaed
+  Stored in directory: /Users/canok/Library/Caches/pip/wheels/f1/fb/8a/e778d4694c4e4bd494c4a034d2de547a67c292040bfc691129
+Successfully built jsonrpc-base
+Installing collected packages: multidict, idna, typing-extensions, yarl, chardet, attrs, async-timeout, aiohttp, jsonrpc-base, async-exit-stack, six, python-dateutil, ya-aioclient, urllib3, yapapi, certifi
 Successfully installed aiohttp-3.6.2 async-exit-stack-1.0.1 async-timeout-3.0.1 attrs-20.1.0 certifi-2020.6.20 chardet-3.0.4 idna-2.10 jsonrpc-base-1.1.0 multidict-4.7.6 python-dateutil-2.8.1 six-1.15.0 typing-extensions-3.7.4.3 urllib3-1.25.10 ya-aioclient-0.1.2 yapapi-0.1.5 yarl-1.5.1
-
-(yagna-python-tutorial) gabriel@gabriel-G3-3579:~/Desktop/golem-linux-v0.3.3-alpha.5/yapapi/examples/blender$ pip3 install yapapi certifi
-Requirement already satisfied: yapapi in /home/gabriel/.envs/yagna-python-tutorial/lib/python3.8/site-packages (0.1.5)
-Requirement already satisfied: certifi in /home/gabriel/.envs/yagna-python-tutorial/lib/python3.8/site-packages (2020.6.20)
-Requirement already satisfied: jsonrpc-base<2.0.0,>=1.0.3 in /home/gabriel/.envs/yagna-python-tutorial/lib/python3.8/site-packages (from yapapi) (1.1.0)
-Requirement already satisfied: ya-aioclient<0.2.0,>=0.1.1 in /home/gabriel/.envs/yagna-python-tutorial/lib/python3.8/site-packages (from yapapi) (0.1.2)
-Requirement already satisfied: aiohttp<4.0,>=3.6 in /home/gabriel/.envs/yagna-python-tutorial/lib/python3.8/site-packages (from yapapi) (3.6.2)
-Requirement already satisfied: urllib3<2.0.0,>=1.25.9 in /home/gabriel/.envs/yagna-python-tutorial/lib/python3.8/site-packages (from yapapi) (1.25.10)
-Requirement already satisfied: async_exit_stack<2.0.0,>=1.0.1 in /home/gabriel/.envs/yagna-python-tutorial/lib/python3.8/site-packages (from yapapi) (1.0.1)
-Requirement already satisfied: typing_extensions<4.0.0,>=3.7.4 in /home/gabriel/.envs/yagna-python-tutorial/lib/python3.8/site-packages (from yapapi) (3.7.4.3)
-Requirement already satisfied: python-dateutil<3.0.0,>=2.8.1 in /home/gabriel/.envs/yagna-python-tutorial/lib/python3.8/site-packages (from ya-aioclient<0.2.0,>=0.1.1->yapapi) (2.8.1)
-Requirement already satisfied: attrs>=17.3.0 in /home/gabriel/.envs/yagna-python-tutorial/lib/python3.8/site-packages (from aiohttp<4.0,>=3.6->yapapi) (20.1.0)
-Requirement already satisfied: chardet<4.0,>=2.0 in /home/gabriel/.envs/yagna-python-tutorial/lib/python3.8/site-packages (from aiohttp<4.0,>=3.6->yapapi) (3.0.4)
-Requirement already satisfied: multidict<5.0,>=4.5 in /home/gabriel/.envs/yagna-python-tutorial/lib/python3.8/site-packages (from aiohttp<4.0,>=3.6->yapapi) (4.7.6)
-Requirement already satisfied: async-timeout<4.0,>=3.0 in /home/gabriel/.envs/yagna-python-tutorial/lib/python3.8/site-packages (from aiohttp<4.0,>=3.6->yapapi) (3.0.1)
-Requirement already satisfied: yarl<2.0,>=1.0 in /home/gabriel/.envs/yagna-python-tutorial/lib/python3.8/site-packages (from aiohttp<4.0,>=3.6->yapapi) (1.5.1)
-Requirement already satisfied: six>=1.5 in /home/gabriel/.envs/yagna-python-tutorial/lib/python3.8/site-packages (from python-dateutil<3.0.0,>=2.8.1->ya-aioclient<0.2.0,>=0.1.1->yapapi) (1.15.0)
-Requirement already satisfied: idna>=2.0 in /home/gabriel/.envs/yagna-python-tutorial/lib/python3.8/site-packages (from yarl<2.0,>=1.0->aiohttp<4.0,>=3.6->yapapi) (2.10)
-(yagna-python-tutorial) gabriel@gabriel-G3-3579:~/Desktop/golem-linux-v0.3.3-alpha.5/yapapi/examples/blender$ git checkout 0.1.5
+(yagpy)  canok@Azazel  ~/Documents  git clone https://github.com/golemfactory/yapapi.git
+Cloning into 'yapapi'...
+remote: Enumerating objects: 173, done.
+remote: Counting objects: 100% (173/173), done.
+remote: Compressing objects: 100% (112/112), done.
+remote: Total 1000 (delta 100), reused 120 (delta 61), pack-reused 827
+Receiving objects: 100% (1000/1000), 9.66 MiB | 3.89 MiB/s, done.
+Resolving deltas: 100% (485/485), done.
+(yagpy)  canok@Azazel  ~/Documents  cd yagpy 
+(yagpy)  canok@Azazel  ~/Documents/yagpy  cd ..
+(yagpy)  canok@Azazel  ~/Documents  cd yapapi 
+(yagpy)  canok@Azazel  ~/Documents/yapapi   master  export YAGNA_APPKEY=insert-your-32-char-app-key-here
+(yagpy)  canok@Azazel  ~/Documents/yapapi   master  git checkout 0.1.5
 Note: switching to '0.1.5'.
 
 You are in 'detached HEAD' state. You can look around, make experimental
@@ -115,145 +360,157 @@ Or undo this operation with:
 Turn off this advice by setting config variable advice.detachedHead to false
 
 HEAD is now at 4c2bbc8 * update default repo url * bump patch version
-(yagna-python-tutorial) gabriel@gabriel-G3-3579:~/Desktop/golem-linux-v0.3.3-alpha.5/yapapi/examples/blender$ pip3 install yapapi certifi^C
-(yagna-python-tutorial) gabriel@gabriel-G3-3579:~/Desktop/golem-linux-v0.3.3-alpha.5/yapapi/examples/blender$ export YAGNA_APPKEY=e1d2503052a845619438a6197b626abf
-(yagna-python-tutorial) gabriel@gabriel-G3-3579:~/Desktop/golem-linux-v0.3.3-alpha.5/yapapi/examples/blender$ cd yapapi/examples/blender
-bash: cd: yapapi/examples/blender: No such file or directory
-(yagna-python-tutorial) gabriel@gabriel-G3-3579:~/Desktop/golem-linux-v0.3.3-alpha.5/yapapi/examples/blender$ python3 ./blender.py
-progress= {'allocation': 'b85c76ff-c7b5-4c44-bad7-4f52c99483b5', 'spent_amount': Decimal('0'), 'remaining_amount': Decimal('10')}
-('sub', 'created', 'c6c2c814-1453-4553-beb1-6cdd2ddc2e73', {})
-('prop', 'recv', '96483601-c1eb-4437-a696-67c7c9cd1bd6', {'_from': '0x82914e8d26322f1977a17c2544c1327c0c3ccb8c'})
-('prop', 'respond', '96483601-c1eb-4437-a696-67c7c9cd1bd6', {})
-('prop', 'recv', 'c99953e8-3913-4066-bc24-e64195c85746', {'_from': '0xdf18d50a0b1f4007432eb42fad11ff706b40cc1b'})
-('prop', 'respond', 'c99953e8-3913-4066-bc24-e64195c85746', {})
-('prop', 'recv', '4fd5364a-9834-4597-a111-353d88fac9b6', {'_from': '0xf554f79cf0787008e12964519f28c0100343764b'})
-('prop', 'respond', '4fd5364a-9834-4597-a111-353d88fac9b6', {})
-('prop', 'recv', 'bd09a76d-81ac-4cf0-b78f-0be3260f544f', {'_from': '0x717464072d7926889b86c3777e666ee858eda263'})
-('prop', 'respond', 'bd09a76d-81ac-4cf0-b78f-0be3260f544f', {})
-('prop', 'recv', '102d1be3-aaec-4636-9aa6-98686c5e948d', {'_from': '0x82b5389e3a0b5800918c01ec05afb93451e0d41d'})
-('prop', 'respond', '102d1be3-aaec-4636-9aa6-98686c5e948d', {})
-('prop', 'recv', '94475ee2-f780-468c-9280-1896ed72a6eb', {'_from': '0x6394ca3105d9745656f49d7457dfb60349fbeee3'})
-('prop', 'respond', '94475ee2-f780-468c-9280-1896ed72a6eb', {})
-('prop', 'recv', 'f29c7da5-26f2-4e65-af01-c21426e7038a', {'_from': '0x37bc0a5e35863200eecfb55a4134399597017c5b'})
-('prop', 'respond', 'f29c7da5-26f2-4e65-af01-c21426e7038a', {})
-('prop', 'recv', '79975ace-8a4b-4285-ac67-7335353afbc1', {'_from': '0x5ddfed430c9a15125dbd23ffa25c34e897e28666'})
-('prop', 'respond', '79975ace-8a4b-4285-ac67-7335353afbc1', {})
-('prop', 'recv', 'fdb0103a-76c2-433b-8686-b6320faafffd', {'_from': '0xdf18d50a0b1f4007432eb42fad11ff706b40cc1b'})
-('prop', 'buffered', 'fdb0103a-76c2-433b-8686-b6320faafffd', {})
-('prop', 'recv', '82bad5e7-a1ce-4131-9b9e-63aace77e654', {'_from': '0x82914e8d26322f1977a17c2544c1327c0c3ccb8c'})
-('prop', 'buffered', '82bad5e7-a1ce-4131-9b9e-63aace77e654', {})
-('prop', 'recv', 'c2a87fd1-be45-4b90-b459-1f12ce8f8352', {'_from': '0xf554f79cf0787008e12964519f28c0100343764b'})
-('prop', 'buffered', 'c2a87fd1-be45-4b90-b459-1f12ce8f8352', {})
-('prop', 'recv', '93814339-7896-470e-986a-c2e533a7f9f5', {'_from': '0x717464072d7926889b86c3777e666ee858eda263'})
-('prop', 'buffered', '93814339-7896-470e-986a-c2e533a7f9f5', {})
-('prop', 'recv', '0e452656-d737-42d2-9855-9ddbb1f4f8e1', {'_from': '0x82b5389e3a0b5800918c01ec05afb93451e0d41d'})
-('prop', 'buffered', '0e452656-d737-42d2-9855-9ddbb1f4f8e1', {})
-('prop', 'recv', '40973f0e-d636-4137-8623-6390bcdd1c47', {'_from': '0x6394ca3105d9745656f49d7457dfb60349fbeee3'})
-('prop', 'buffered', '40973f0e-d636-4137-8623-6390bcdd1c47', {})
-('prop', 'recv', '53de675d-90d2-4f42-80c4-792732cf979f', {'_from': '0x37bc0a5e35863200eecfb55a4134399597017c5b'})
-('prop', 'buffered', '53de675d-90d2-4f42-80c4-792732cf979f', {})
-('prop', 'recv', '5181f7d8-7a90-4daa-a814-c55bc894c0da', {'_from': '0x5ddfed430c9a15125dbd23ffa25c34e897e28666'})
-('prop', 'buffered', '5181f7d8-7a90-4daa-a814-c55bc894c0da', {})
-('agr', 'create', '40973f0e-d636-4137-8623-6390bcdd1c47', {'provider_idn': Identification(name='tworec@adjoint-testnet', subnet_tag='testnet')})
-('agr', 'confirm', '40973f0e-d636-4137-8623-6390bcdd1c47', {})
-('wkr', 'created', 0, {'agreement': '40973f0e-d636-4137-8623-6390bcdd1c47', 'provider_idn': Identification(name='tworec@adjoint-testnet', subnet_tag='testnet')})
-('act', 'create', '54653c3395f74abda9b94b9f9c17e9e9', {})
+(yagpy)  canok@Azazel  ~/Documents/yapapi  ➦ 4c2bbc8  export YAGNA_APPKEY=f6f446e202b84a7c9c6659d4d22fe3e3
+(yagpy)  canok@Azazel  ~/Documents/yapapi  ➦ 4c2bbc8  ls
+LICENSE        README.md      art            docs           examples       pyproject.toml tests          yapapi
+(yagpy)  canok@Azazel  ~/Documents/yapapi  ➦ 4c2bbc8  cd examples/blender
+(yagpy)  canok@Azazel  ~/Documents/yapapi/examples/blender  ➦ 4c2bbc8  python3 ./blender.py
+progress= {'allocation': 'a73deb58-bda2-4f60-aedb-384b25cf5af1', 'spent_amount': Decimal('0'), 'remaining_amount': Decimal('10')}
+Please check if gftp is installed and is in your $PATH.
+Expecting value: line 1 column 1 (char 0)
+(yagpy)  canok@Azazel  ~/Documents/yapapi/examples/blender  ➦ 4c2bbc8  python3 ./blender.py
+progress= {'allocation': 'cd17ca46-9ebf-43e2-9388-f1010fed1135', 'spent_amount': Decimal('0'), 'remaining_amount': Decimal('10')}
+('sub', 'created', 'b4632132-277e-443c-bcd5-99aa139206f5', {})
+('prop', 'recv', '933a0bd6-2836-4bf8-80ff-b793aa8e48cf', {'_from': '0x37bc0a5e35863200eecfb55a4134399597017c5b'})
+('prop', 'respond', '933a0bd6-2836-4bf8-80ff-b793aa8e48cf', {})
+('prop', 'recv', 'e40afe84-f5e2-4929-a431-0623795f5cb4', {'_from': '0x717464072d7926889b86c3777e666ee858eda263'})
+('prop', 'respond', 'e40afe84-f5e2-4929-a431-0623795f5cb4', {})
+('prop', 'recv', 'bc9b85dd-bb64-4abf-aa66-034972265e7f', {'_from': '0x6394ca3105d9745656f49d7457dfb60349fbeee3'})
+('prop', 'respond', 'bc9b85dd-bb64-4abf-aa66-034972265e7f', {})
+('prop', 'recv', '3ff245ed-3f8e-411e-8b02-26f256a1e325', {'_from': '0x82914e8d26322f1977a17c2544c1327c0c3ccb8c'})
+('prop', 'respond', '3ff245ed-3f8e-411e-8b02-26f256a1e325', {})
+('prop', 'recv', '5d640ba4-d074-4034-a50b-68e0b226c739', {'_from': '0x5ddfed430c9a15125dbd23ffa25c34e897e28666'})
+('prop', 'respond', '5d640ba4-d074-4034-a50b-68e0b226c739', {})
+('prop', 'recv', '4b6bc6d5-84f9-4268-b3ff-f2d9444b1b66', {'_from': '0xdf18d50a0b1f4007432eb42fad11ff706b40cc1b'})
+('prop', 'respond', '4b6bc6d5-84f9-4268-b3ff-f2d9444b1b66', {})
+('prop', 'recv', '17d99982-5f15-41af-ba0d-e445d28a8b52', {'_from': '0x82b5389e3a0b5800918c01ec05afb93451e0d41d'})
+('prop', 'respond', '17d99982-5f15-41af-ba0d-e445d28a8b52', {})
+('prop', 'recv', '5b03a93e-dc2b-4f06-8032-79f8cadd9ab5', {'_from': '0xf554f79cf0787008e12964519f28c0100343764b'})
+('prop', 'respond', '5b03a93e-dc2b-4f06-8032-79f8cadd9ab5', {})
+('prop', 'recv', 'f392bec6-66bb-4e7e-83ae-9ff6f46b28d2', {'_from': '0x37bc0a5e35863200eecfb55a4134399597017c5b'})
+('prop', 'buffered', 'f392bec6-66bb-4e7e-83ae-9ff6f46b28d2', {})
+('prop', 'recv', '2215e639-5b42-4242-87b9-6f14b6a64e18', {'_from': '0x717464072d7926889b86c3777e666ee858eda263'})
+('prop', 'buffered', '2215e639-5b42-4242-87b9-6f14b6a64e18', {})
+('prop', 'recv', '8ddd5e6a-6f5a-4d33-960d-1b15ff9e972c', {'_from': '0x6394ca3105d9745656f49d7457dfb60349fbeee3'})
+('prop', 'buffered', '8ddd5e6a-6f5a-4d33-960d-1b15ff9e972c', {})
+('prop', 'recv', '6a0329af-c348-4b86-9a9c-041692a4f278', {'_from': '0x82914e8d26322f1977a17c2544c1327c0c3ccb8c'})
+('prop', 'buffered', '6a0329af-c348-4b86-9a9c-041692a4f278', {})
+('prop', 'recv', '7eefcc07-8551-4a60-8e2f-640810177911', {'_from': '0x82b5389e3a0b5800918c01ec05afb93451e0d41d'})
+('prop', 'buffered', '7eefcc07-8551-4a60-8e2f-640810177911', {})
+('prop', 'recv', '11caba31-8465-4cec-bd52-1f10681a8499', {'_from': '0xdf18d50a0b1f4007432eb42fad11ff706b40cc1b'})
+('prop', 'buffered', '11caba31-8465-4cec-bd52-1f10681a8499', {})
+('prop', 'recv', '9f3601b0-b998-4ba6-a617-70c1328df607', {'_from': '0x5ddfed430c9a15125dbd23ffa25c34e897e28666'})
+('prop', 'buffered', '9f3601b0-b998-4ba6-a617-70c1328df607', {})
+('prop', 'recv', 'b71962ee-6430-4438-9781-030c57e84713', {'_from': '0xf554f79cf0787008e12964519f28c0100343764b'})
+('prop', 'buffered', 'b71962ee-6430-4438-9781-030c57e84713', {})
+('agr', 'create', '7eefcc07-8551-4a60-8e2f-640810177911', {'provider_idn': Identification(name='tworec@mf-testnet', subnet_tag='testnet')})
+('agr', 'confirm', '7eefcc07-8551-4a60-8e2f-640810177911', {})
+('wkr', 'created', 0, {'agreement': '7eefcc07-8551-4a60-8e2f-640810177911', 'provider_idn': Identification(name='tworec@mf-testnet', subnet_tag='testnet')})
+('act', 'create', 'bbfa7f17d7874b1ab6e82241ab5893e9', {})
 ('wkr', 'get-work', 0, {'task': Task(data=0})
-new batch !!! [{'deploy': {}}, {'start': {}}, {'transfer': {'from': 'gftp://0xcb94e0f49d27789442c2ab4dbea8f37699b3d1e1/ee82d5dc7188611da558c76e777a2df7867d9526eac6fa9378728d44ca4a2a10', 'to': 'container:/golem/resource/scene.blend'}}, {'transfer': {'from': 'gftp://0xcb94e0f49d27789442c2ab4dbea8f37699b3d1e1/ac2ec7ef5af78c2faaf27ef593f9cd62666340dccfb5d730b5430f343d524933', 'to': 'container:/golem/work/params.json'}}, {'run': {'entry_point': '/golem/entrypoints/run-blender.sh', 'args': ()}}, {'transfer': {'from': 'container:/golem/output/out0000.png', 'to': 'gftp://0xcb94e0f49d27789442c2ab4dbea8f37699b3d1e1/U3XKP0q4FjpmQ5EPmdwfsKwVrfoPrGmm0AJktJDiXripEpvln7xHIYk1KPDtSvWug'}}] <yapapi.rest.activity.Batch object at 0x7f31a470fee0>
-('agr', 'create', '0e452656-d737-42d2-9855-9ddbb1f4f8e1', {'provider_idn': Identification(name='tworec@mf-testnet', subnet_tag='testnet')})
+new batch !!! [{'deploy': {}}, {'start': {}}, {'transfer': {'from': 'gftp://0x15714ca8a4cd0a18ecc8a1ef875afcd4d6604fef/ee82d5dc7188611da558c76e777a2df7867d9526eac6fa9378728d44ca4a2a10', 'to': 'container:/golem/resource/scene.blend'}}, {'transfer': {'from': 'gftp://0x15714ca8a4cd0a18ecc8a1ef875afcd4d6604fef/ac2ec7ef5af78c2faaf27ef593f9cd62666340dccfb5d730b5430f343d524933', 'to': 'container:/golem/work/params.json'}}, {'run': {'entry_point': '/golem/entrypoints/run-blender.sh', 'args': ()}}, {'transfer': {'from': 'container:/golem/output/out0000.png', 'to': 'gftp://0x15714ca8a4cd0a18ecc8a1ef875afcd4d6604fef/fnE3qopdMomcKPfahejJT6N558Med1QzMC3vk38dBDTWcnCv9JO8frpvjCOp6SkFh'}}] <yapapi.rest.activity.Batch object at 0x7f8cea2046d0>
+('agr', 'create', 'b71962ee-6430-4438-9781-030c57e84713', {'provider_idn': Identification(name='golem-dev@awokado-testnet', subnet_tag='testnet')})
+('agr', 'confirm', 'b71962ee-6430-4438-9781-030c57e84713', {})
+('wkr', 'created', 1, {'agreement': 'b71962ee-6430-4438-9781-030c57e84713', 'provider_idn': Identification(name='golem-dev@awokado-testnet', subnet_tag='testnet')})
+('agr', 'create', '11caba31-8465-4cec-bd52-1f10681a8499', {'provider_idn': Identification(name='tworec@lukaszglen-testnet', subnet_tag='testnet')})
+('agr', 'confirm', '11caba31-8465-4cec-bd52-1f10681a8499', {})
+('act', 'create', '77b9de692c954e4aa611ba6678723702', {})
+('wkr', 'get-work', 1, {'task': Task(data=10})
+[2020-08-27T17:27:53Z ERROR ya_service_bus::remote_router] bind error: already registered: Service ID '/public/gftp/ee82d5dc7188611da558c76e777a2df7867d9526eac6fa9378728d44ca4a2a10/GetMetadata' already registered
+[2020-08-27T17:27:53Z ERROR ya_service_bus::remote_router] bind error: already registered: Service ID '/public/gftp/ee82d5dc7188611da558c76e777a2df7867d9526eac6fa9378728d44ca4a2a10/GetChunk' already registered
+('wkr', 'created', 2, {'agreement': '11caba31-8465-4cec-bd52-1f10681a8499', 'provider_idn': Identification(name='tworec@lukaszglen-testnet', subnet_tag='testnet')})
+new batch !!! [{'deploy': {}}, {'start': {}}, {'transfer': {'from': 'gftp://0x15714ca8a4cd0a18ecc8a1ef875afcd4d6604fef/ee82d5dc7188611da558c76e777a2df7867d9526eac6fa9378728d44ca4a2a10', 'to': 'container:/golem/resource/scene.blend'}}, {'transfer': {'from': 'gftp://0x15714ca8a4cd0a18ecc8a1ef875afcd4d6604fef/2986a1204b7e92b7877820b37cf8504bb5de6ea91da3ab48209069b2622dac5b', 'to': 'container:/golem/work/params.json'}}, {'run': {'entry_point': '/golem/entrypoints/run-blender.sh', 'args': ()}}, {'transfer': {'from': 'container:/golem/output/out0010.png', 'to': 'gftp://0x15714ca8a4cd0a18ecc8a1ef875afcd4d6604fef/FkVYw8pSg4PnVX0HmDko5QS51674qmAtLtqocW6HTbPL4SGEKPZPz5vGPJnd3ujrp'}}] <yapapi.rest.activity.Batch object at 0x7f8cea24f4d0>
+('act', 'create', '0843a2a9b905425ba1b059b355d1d53f', {})
+('wkr', 'get-work', 2, {'task': Task(data=20})
+[2020-08-27T17:27:55Z ERROR ya_service_bus::remote_router] bind error: already registered: Service ID '/public/gftp/ee82d5dc7188611da558c76e777a2df7867d9526eac6fa9378728d44ca4a2a10/GetMetadata' already registered
+[2020-08-27T17:27:55Z ERROR ya_service_bus::remote_router] bind error: already registered: Service ID '/public/gftp/ee82d5dc7188611da558c76e777a2df7867d9526eac6fa9378728d44ca4a2a10/GetChunk' already registered
+new batch !!! [{'deploy': {}}, {'start': {}}, {'transfer': {'from': 'gftp://0x15714ca8a4cd0a18ecc8a1ef875afcd4d6604fef/ee82d5dc7188611da558c76e777a2df7867d9526eac6fa9378728d44ca4a2a10', 'to': 'container:/golem/resource/scene.blend'}}, {'transfer': {'from': 'gftp://0x15714ca8a4cd0a18ecc8a1ef875afcd4d6604fef/30d60d68c6b3ff326d441d664f48d6cbb50febd1890183b17b88b8370d40c754', 'to': 'container:/golem/work/params.json'}}, {'run': {'entry_point': '/golem/entrypoints/run-blender.sh', 'args': ()}}, {'transfer': {'from': 'container:/golem/output/out0020.png', 'to': 'gftp://0x15714ca8a4cd0a18ecc8a1ef875afcd4d6604fef/cb96dM8PGj6h0ibSrO8oKKll4K9tvoRhwb89F92ddkqnufjrwXZlkPQyYfdXmvue8'}}] <yapapi.rest.activity.Batch object at 0x7f8cea243f10>
 ('wkr', 'step', 0, {'message': 'stdout: {\n  "valid": {\n  ', 'idx': 0})
 ('wkr', 'step', 0, {'message': None, 'idx': 1})
-('agr', 'confirm', '0e452656-d737-42d2-9855-9ddbb1f4f8e1', {})
-('wkr', 'created', 1, {'agreement': '0e452656-d737-42d2-9855-9ddbb1f4f8e1', 'provider_idn': Identification(name='tworec@mf-testnet', subnet_tag='testnet')})
-('agr', 'create', 'c2a87fd1-be45-4b90-b459-1f12ce8f8352', {'provider_idn': Identification(name='golem-dev@awokado-testnet', subnet_tag='testnet')})
-('agr', 'confirm', 'c2a87fd1-be45-4b90-b459-1f12ce8f8352', {})
-('wkr', 'created', 2, {'agreement': 'c2a87fd1-be45-4b90-b459-1f12ce8f8352', 'provider_idn': Identification(name='golem-dev@awokado-testnet', subnet_tag='testnet')})
-('act', 'create', 'd294832f794c475b95a429c347d8d8a0', {})
-('wkr', 'get-work', 1, {'task': Task(data=10})
-[2020-08-26T12:43:17Z ERROR ya_service_bus::remote_router] bind error: already registered: Service ID '/public/gftp/ee82d5dc7188611da558c76e777a2df7867d9526eac6fa9378728d44ca4a2a10/GetMetadata' already registered
-[2020-08-26T12:43:17Z ERROR ya_service_bus::remote_router] bind error: already registered: Service ID '/public/gftp/ee82d5dc7188611da558c76e777a2df7867d9526eac6fa9378728d44ca4a2a10/GetChunk' already registered
-new batch !!! [{'deploy': {}}, {'start': {}}, {'transfer': {'from': 'gftp://0xcb94e0f49d27789442c2ab4dbea8f37699b3d1e1/ee82d5dc7188611da558c76e777a2df7867d9526eac6fa9378728d44ca4a2a10', 'to': 'container:/golem/resource/scene.blend'}}, {'transfer': {'from': 'gftp://0xcb94e0f49d27789442c2ab4dbea8f37699b3d1e1/2986a1204b7e92b7877820b37cf8504bb5de6ea91da3ab48209069b2622dac5b', 'to': 'container:/golem/work/params.json'}}, {'run': {'entry_point': '/golem/entrypoints/run-blender.sh', 'args': ()}}, {'transfer': {'from': 'container:/golem/output/out0010.png', 'to': 'gftp://0xcb94e0f49d27789442c2ab4dbea8f37699b3d1e1/zVVBw1dr0hWTtrCRz5f1oHMwUoOoHDO5Y9M8jlGQiBNfDHFBySRm43QdYZCCdYOr6'}}] <yapapi.rest.activity.Batch object at 0x7f31a3eaa6a0>
-('act', 'create', 'a94d55864c204ce7ac667d30db1f9a2b', {})
-('wkr', 'get-work', 2, {'task': Task(data=20})
-[2020-08-26T12:43:19Z ERROR ya_service_bus::remote_router] bind error: already registered: Service ID '/public/gftp/ee82d5dc7188611da558c76e777a2df7867d9526eac6fa9378728d44ca4a2a10/GetMetadata' already registered
-[2020-08-26T12:43:19Z ERROR ya_service_bus::remote_router] bind error: already registered: Service ID '/public/gftp/ee82d5dc7188611da558c76e777a2df7867d9526eac6fa9378728d44ca4a2a10/GetChunk' already registered
-('wkr', 'step', 1, {'message': 'stdout: {\n  "valid": {\n  ', 'idx': 0})
-('wkr', 'step', 1, {'message': None, 'idx': 1})
-new batch !!! [{'deploy': {}}, {'start': {}}, {'transfer': {'from': 'gftp://0xcb94e0f49d27789442c2ab4dbea8f37699b3d1e1/ee82d5dc7188611da558c76e777a2df7867d9526eac6fa9378728d44ca4a2a10', 'to': 'container:/golem/resource/scene.blend'}}, {'transfer': {'from': 'gftp://0xcb94e0f49d27789442c2ab4dbea8f37699b3d1e1/30d60d68c6b3ff326d441d664f48d6cbb50febd1890183b17b88b8370d40c754', 'to': 'container:/golem/work/params.json'}}, {'run': {'entry_point': '/golem/entrypoints/run-blender.sh', 'args': ()}}, {'transfer': {'from': 'container:/golem/output/out0020.png', 'to': 'gftp://0xcb94e0f49d27789442c2ab4dbea8f37699b3d1e1/1KjJo1dK9rPGpht3v7GzVtZCG7eHpHRDIr5eurG5Z85VDUISx2CnTtbDHjo1s13LC'}}] <yapapi.rest.activity.Batch object at 0x7f31a3eaafa0>
 ('wkr', 'step', 0, {'message': None, 'idx': 2})
 ('wkr', 'step', 0, {'message': None, 'idx': 3})
 ('wkr', 'step', 0, {'message': 'stdout: \x1bc\x1b[?7l\x1b[2J\x1b[0mSe', 'idx': 4})
+('wkr', 'step', 1, {'message': 'stdout: {\n  "valid": {\n  ', 'idx': 0})
+('wkr', 'step', 1, {'message': None, 'idx': 1})
+('wkr', 'step', 1, {'message': None, 'idx': 2})
+('wkr', 'step', 1, {'message': None, 'idx': 3})
+('wkr', 'step', 1, {'message': 'stdout: \x1bc\x1b[?7l\x1b[2J\x1b[0mSe', 'idx': 4})
 ('wkr', 'step', 2, {'message': 'stdout: {\n  "valid": {\n  ', 'idx': 0})
 ('wkr', 'step', 2, {'message': None, 'idx': 1})
 ('wkr', 'step', 2, {'message': None, 'idx': 2})
-('wkr', 'step', 1, {'message': None, 'idx': 2})
-('wkr', 'step', 1, {'message': None, 'idx': 3})
 ('wkr', 'step', 2, {'message': None, 'idx': 3})
-('wkr', 'step', 1, {'message': 'stdout: \x1bc\x1b[?7l\x1b[2J\x1b[0mSe', 'idx': 4})
+('wkr', 'step', 2, {'message': 'stdout: \x1bc\x1b[?7l\x1b[2J\x1b[0mSe', 'idx': 4})
 start
 done
 ('wkr', 'step', 0, {'message': None, 'idx': 5})
 ('wkr', 'get-results', 0, {})
 ('wkr', 'bach-done', 0, {})
-('agr', 'payment_prep', '40973f0e-d636-4137-8623-6390bcdd1c47', {})
-('agr', 'payment_queued', '40973f0e-d636-4137-8623-6390bcdd1c47', {})
+('agr', 'payment_prep', '7eefcc07-8551-4a60-8e2f-640810177911', {})
+('agr', 'payment_queued', '7eefcc07-8551-4a60-8e2f-640810177911', {})
 ('task', 'accept', None, {'result': None})
 ('wkr', 'get-work', 0, {'task': Task(data=30})
-new batch !!! [{'transfer': {'from': 'gftp://0xcb94e0f49d27789442c2ab4dbea8f37699b3d1e1/5b9e88c14ae3c8262abd1dd073296ece79d4c77ab114d555658e894e67a84839', 'to': 'container:/golem/work/params.json'}}, {'run': {'entry_point': '/golem/entrypoints/run-blender.sh', 'args': ()}}, {'transfer': {'from': 'container:/golem/output/out0030.png', 'to': 'gftp://0xcb94e0f49d27789442c2ab4dbea8f37699b3d1e1/m2wbrFaBGWnnN0ZqdbmTfaTIfhW0UdKOWf1skb5g8TLMSIpHsgOW9Oi9rNwSPKkjH'}}] <yapapi.rest.activity.Batch object at 0x7f31a3eaaca0>
-('wkr', 'step', 2, {'message': 'stdout: \x1bc\x1b[?7l\x1b[2J\x1b[0mSe', 'idx': 4})
+new batch !!! [{'transfer': {'from': 'gftp://0x15714ca8a4cd0a18ecc8a1ef875afcd4d6604fef/5b9e88c14ae3c8262abd1dd073296ece79d4c77ab114d555658e894e67a84839', 'to': 'container:/golem/work/params.json'}}, {'run': {'entry_point': '/golem/entrypoints/run-blender.sh', 'args': ()}}, {'transfer': {'from': 'container:/golem/output/out0030.png', 'to': 'gftp://0x15714ca8a4cd0a18ecc8a1ef875afcd4d6604fef/QmT2Y3B8F5R0vg9z78Yq5ftKpPeqQt5Z6WPtZP7VnvuyD4vNUgSvdxCRoYdN23gHe'}}] <yapapi.rest.activity.Batch object at 0x7f8cea24e150>
 start
 done
 ('wkr', 'step', 1, {'message': None, 'idx': 5})
 ('wkr', 'get-results', 1, {})
 ('wkr', 'bach-done', 1, {})
-('agr', 'payment_prep', '0e452656-d737-42d2-9855-9ddbb1f4f8e1', {})
-('agr', 'payment_queued', '0e452656-d737-42d2-9855-9ddbb1f4f8e1', {})
+('agr', 'payment_prep', 'b71962ee-6430-4438-9781-030c57e84713', {})
+('agr', 'payment_queued', 'b71962ee-6430-4438-9781-030c57e84713', {})
 ('task', 'accept', None, {'result': None})
 ('wkr', 'get-work', 1, {'task': Task(data=40})
-new batch !!! [{'transfer': {'from': 'gftp://0xcb94e0f49d27789442c2ab4dbea8f37699b3d1e1/ce0d6e911f6cf144be16d5dc4af7951058cdb3ed4fd73d2aee90a23e87fed4d1', 'to': 'container:/golem/work/params.json'}}, {'run': {'entry_point': '/golem/entrypoints/run-blender.sh', 'args': ()}}, {'transfer': {'from': 'container:/golem/output/out0040.png', 'to': 'gftp://0xcb94e0f49d27789442c2ab4dbea8f37699b3d1e1/XYxvlRcJSBmPMyTELAKsqiQzCKOF5b4bRI8YVLbZ2WHzsJs5MQerJ8nJt9Z4XvR8b'}}] <yapapi.rest.activity.Batch object at 0x7f31a3ec2df0>
+new batch !!! [{'transfer': {'from': 'gftp://0x15714ca8a4cd0a18ecc8a1ef875afcd4d6604fef/ce0d6e911f6cf144be16d5dc4af7951058cdb3ed4fd73d2aee90a23e87fed4d1', 'to': 'container:/golem/work/params.json'}}, {'run': {'entry_point': '/golem/entrypoints/run-blender.sh', 'args': ()}}, {'transfer': {'from': 'container:/golem/output/out0040.png', 'to': 'gftp://0x15714ca8a4cd0a18ecc8a1ef875afcd4d6604fef/9lWeinOGEQtvMg2TWz2N6yK5av7oyvBVGPeallTNTVwJY26U3E6RDmRqHXK9n1Vop'}}] <yapapi.rest.activity.Batch object at 0x7f8cea26bf50>
 start
 done
 ('wkr', 'step', 2, {'message': None, 'idx': 5})
 ('wkr', 'get-results', 2, {})
 ('wkr', 'bach-done', 2, {})
-('agr', 'payment_prep', 'c2a87fd1-be45-4b90-b459-1f12ce8f8352', {})
-('agr', 'payment_queued', 'c2a87fd1-be45-4b90-b459-1f12ce8f8352', {})
+('agr', 'payment_prep', '11caba31-8465-4cec-bd52-1f10681a8499', {})
+('agr', 'payment_queued', '11caba31-8465-4cec-bd52-1f10681a8499', {})
 ('task', 'accept', None, {'result': None})
 ('wkr', 'get-work', 2, {'task': Task(data=50})
-new batch !!! [{'transfer': {'from': 'gftp://0xcb94e0f49d27789442c2ab4dbea8f37699b3d1e1/8c72688632e0fc0fd6bf6ec8c53023affee1ccde0bf90240a5ce9307cf09afda', 'to': 'container:/golem/work/params.json'}}, {'run': {'entry_point': '/golem/entrypoints/run-blender.sh', 'args': ()}}, {'transfer': {'from': 'container:/golem/output/out0050.png', 'to': 'gftp://0xcb94e0f49d27789442c2ab4dbea8f37699b3d1e1/7vcw0dssfEB7AeZX7pwG6Y4836rreaVQBOPzP45kz4sq2PCLrCOFcKWFwAcBS8zUl'}}] <yapapi.rest.activity.Batch object at 0x7f31a47211f0>
+new batch !!! [{'transfer': {'from': 'gftp://0x15714ca8a4cd0a18ecc8a1ef875afcd4d6604fef/8c72688632e0fc0fd6bf6ec8c53023affee1ccde0bf90240a5ce9307cf09afda', 'to': 'container:/golem/work/params.json'}}, {'run': {'entry_point': '/golem/entrypoints/run-blender.sh', 'args': ()}}, {'transfer': {'from': 'container:/golem/output/out0050.png', 'to': 'gftp://0x15714ca8a4cd0a18ecc8a1ef875afcd4d6604fef/lvDoKKwQCYv0DwSGuRVOaboSXK6uoVgTO5Y5Ui9vCoEIjw7RshGc55ymp2kkJrGrP'}}] <yapapi.rest.activity.Batch object at 0x7f8cea24e1d0>
+start
+done
 ('wkr', 'step', 0, {'message': None, 'idx': 0})
 ('wkr', 'step', 0, {'message': 'stdout: \x1bc\x1b[?7l\x1b[2J\x1b[0mSe', 'idx': 1})
+('wkr', 'step', 0, {'message': None, 'idx': 2})
+('wkr', 'get-results', 0, {})
+('wkr', 'bach-done', 0, {})
+('agr', 'payment_prep', '7eefcc07-8551-4a60-8e2f-640810177911', {})
+('agr', 'payment_queued', '7eefcc07-8551-4a60-8e2f-640810177911', {})
+('task', 'accept', None, {'result': None})
 ('wkr', 'step', 1, {'message': None, 'idx': 0})
 ('wkr', 'step', 1, {'message': 'stdout: \x1bc\x1b[?7l\x1b[2J\x1b[0mSe', 'idx': 1})
 ('wkr', 'step', 2, {'message': None, 'idx': 0})
 ('wkr', 'step', 2, {'message': 'stdout: \x1bc\x1b[?7l\x1b[2J\x1b[0mSe', 'idx': 1})
 start
 done
-('wkr', 'step', 0, {'message': None, 'idx': 2})
-('wkr', 'get-results', 0, {})
-('wkr', 'bach-done', 0, {})
-('agr', 'payment_prep', '40973f0e-d636-4137-8623-6390bcdd1c47', {})
-('agr', 'payment_queued', '40973f0e-d636-4137-8623-6390bcdd1c47', {})
-('task', 'accept', None, {'result': None})
-start
-done
 ('wkr', 'step', 1, {'message': None, 'idx': 2})
 ('wkr', 'get-results', 1, {})
 ('wkr', 'bach-done', 1, {})
-('agr', 'payment_prep', '0e452656-d737-42d2-9855-9ddbb1f4f8e1', {})
-('agr', 'payment_queued', '0e452656-d737-42d2-9855-9ddbb1f4f8e1', {})
+('agr', 'payment_prep', 'b71962ee-6430-4438-9781-030c57e84713', {})
+('agr', 'payment_queued', 'b71962ee-6430-4438-9781-030c57e84713', {})
 ('task', 'accept', None, {'result': None})
 start
 done
 ('wkr', 'step', 2, {'message': None, 'idx': 2})
 ('wkr', 'get-results', 2, {})
 ('wkr', 'bach-done', 2, {})
-('agr', 'payment_prep', 'c2a87fd1-be45-4b90-b459-1f12ce8f8352', {})
-('agr', 'payment_queued', 'c2a87fd1-be45-4b90-b459-1f12ce8f8352', {})
+('agr', 'payment_prep', '11caba31-8465-4cec-bd52-1f10681a8499', {})
+('agr', 'payment_queued', '11caba31-8465-4cec-bd52-1f10681a8499', {})
 ('task', 'accept', None, {'result': None})
 progress= {'stage': 'all work done'}
-progress= {'stage': 'wait for invoices', 'agreements_to_pay': {'c2a87fd1-be45-4b90-b459-1f12ce8f8352', '0e452656-d737-42d2-9855-9ddbb1f4f8e1', '40973f0e-d636-4137-8623-6390bcdd1c47'}}
-got= {'invoice_id': '2ad063dd-67d7-40ac-920f-473dbdb329c1', 'issuer_id': '0x82b5389e3a0b5800918c01ec05afb93451e0d41d', 'recipient_id': '0xcb94e0f49d27789442c2ab4dbea8f37699b3d1e1', 'payee_addr': '0x82b5389e3a0b5800918c01ec05afb93451e0d41d', 'payer_addr': '0xcb94e0f49d27789442c2ab4dbea8f37699b3d1e1', 'last_debit_note_id': None, 'timestamp': datetime.datetime(2020, 8, 26, 12, 44, 29, 246000, tzinfo=tzutc()), 'agreement_id': '0e452656-d737-42d2-9855-9ddbb1f4f8e1', 'activity_ids': ['d294832f794c475b95a429c347d8d8a0'], 'amount': '0.1216331282530000', 'payment_due_date': datetime.datetime(2020, 8, 26, 12, 44, 28, 897063, tzinfo=tzutc()), 'status': 'RECEIVED'}
-got= {'invoice_id': '7d5225e0-0f02-411a-8808-b87a21bf0850', 'issuer_id': '0x6394ca3105d9745656f49d7457dfb60349fbeee3', 'recipient_id': '0xcb94e0f49d27789442c2ab4dbea8f37699b3d1e1', 'payee_addr': '0x6394ca3105d9745656f49d7457dfb60349fbeee3', 'payer_addr': '0xcb94e0f49d27789442c2ab4dbea8f37699b3d1e1', 'last_debit_note_id': None, 'timestamp': datetime.datetime(2020, 8, 26, 12, 44, 29, 551000, tzinfo=tzutc()), 'agreement_id': '40973f0e-d636-4137-8623-6390bcdd1c47', 'activity_ids': ['54653c3395f74abda9b94b9f9c17e9e9'], 'amount': '0.1296762221480000', 'payment_due_date': datetime.datetime(2020, 8, 26, 12, 44, 29, 164761, tzinfo=tzutc()), 'status': 'RECEIVED'}
-got= {'invoice_id': '8a3b2231-376b-434e-86f2-64740d0e4fc9', 'issuer_id': '0xf554f79cf0787008e12964519f28c0100343764b', 'recipient_id': '0xcb94e0f49d27789442c2ab4dbea8f37699b3d1e1', 'payee_addr': '0xf554f79cf0787008e12964519f28c0100343764b', 'payer_addr': '0xcb94e0f49d27789442c2ab4dbea8f37699b3d1e1', 'last_debit_note_id': None, 'timestamp': datetime.datetime(2020, 8, 26, 12, 44, 29, 860000, tzinfo=tzutc()), 'agreement_id': 'c2a87fd1-be45-4b90-b459-1f12ce8f8352', 'activity_ids': ['a94d55864c204ce7ac667d30db1f9a2b'], 'amount': '0.1265378569170000', 'payment_due_date': datetime.datetime(2020, 8, 26, 12, 44, 29, 417472, tzinfo=tzutc()), 'status': 'RECEIVED'}
+got= {'invoice_id': 'c40151da-656c-42d5-a198-da36fd3c678d', 'issuer_id': '0xdf18d50a0b1f4007432eb42fad11ff706b40cc1b', 'recipient_id': '0x15714ca8a4cd0a18ecc8a1ef875afcd4d6604fef', 'payee_addr': '0xdf18d50a0b1f4007432eb42fad11ff706b40cc1b', 'payer_addr': '0x15714ca8a4cd0a18ecc8a1ef875afcd4d6604fef', 'last_debit_note_id': None, 'timestamp': datetime.datetime(2020, 8, 27, 17, 28, 46, 68000, tzinfo=tzutc()), 'agreement_id': '11caba31-8465-4cec-bd52-1f10681a8499', 'activity_ids': ['0843a2a9b905425ba1b059b355d1d53f'], 'amount': '0.1066170432800000', 'payment_due_date': datetime.datetime(2020, 8, 27, 17, 28, 45, 852233, tzinfo=tzutc()), 'status': 'RECEIVED'}
+progress= {'stage': 'wait for invoices', 'agreements_to_pay': {'b71962ee-6430-4438-9781-030c57e84713', '7eefcc07-8551-4a60-8e2f-640810177911'}}
+got= {'invoice_id': '8403a28b-51ae-45a1-b7d8-e906f5ebae43', 'issuer_id': '0xf554f79cf0787008e12964519f28c0100343764b', 'recipient_id': '0x15714ca8a4cd0a18ecc8a1ef875afcd4d6604fef', 'payee_addr': '0xf554f79cf0787008e12964519f28c0100343764b', 'payer_addr': '0x15714ca8a4cd0a18ecc8a1ef875afcd4d6604fef', 'last_debit_note_id': None, 'timestamp': datetime.datetime(2020, 8, 27, 17, 28, 46, 244000, tzinfo=tzutc()), 'agreement_id': 'b71962ee-6430-4438-9781-030c57e84713', 'activity_ids': ['77b9de692c954e4aa611ba6678723702'], 'amount': '0.1088129871280000', 'payment_due_date': datetime.datetime(2020, 8, 27, 17, 28, 46, 59993, tzinfo=tzutc()), 'status': 'RECEIVED'}
+got= {'invoice_id': '064e6b50-1315-46e4-afe9-e0736c929ace', 'issuer_id': '0x82b5389e3a0b5800918c01ec05afb93451e0d41d', 'recipient_id': '0x15714ca8a4cd0a18ecc8a1ef875afcd4d6604fef', 'payee_addr': '0x82b5389e3a0b5800918c01ec05afb93451e0d41d', 'payer_addr': '0x15714ca8a4cd0a18ecc8a1ef875afcd4d6604fef', 'last_debit_note_id': None, 'timestamp': datetime.datetime(2020, 8, 27, 17, 28, 47, 159000, tzinfo=tzutc()), 'agreement_id': '7eefcc07-8551-4a60-8e2f-640810177911', 'activity_ids': ['bbfa7f17d7874b1ab6e82241ab5893e9'], 'amount': '0.1093468766560000', 'payment_due_date': datetime.datetime(2020, 8, 27, 17, 28, 46, 688551, tzinfo=tzutc()), 'status': 'RECEIVED'}
 progress= {'done': True}
+(yagpy)  canok@Azazel  ~/Documents/yapapi/examples/blender  ➦ 4c2bbc8  yagna app-key list
+┌─────────────┬────────────────────────────────────┬──────────────────────────────────────────────┬───────────┬──────────────────────────────┐
+│  name       │  key                               │  id                                          │  role     │  created                     │
+├─────────────┼────────────────────────────────────┼──────────────────────────────────────────────┼───────────┼──────────────────────────────┤
+│  requestor  │  f6f446e202b84a7c9c6659d4d22fe3e3  │  0x15714ca8a4cd0a18ecc8a1ef875afcd4d6604fef  │  manager  │  2020-08-27T17:22:40.612822  │
+└─────────────┴────────────────────────────────────┴──────────────────────────────────────────────┴───────────┴──────────────────────────────┘
+(yagpy)  canok@Azazel  ~/Documents/yapapi/examples/blender  ➦ 4c2bbc8  
+
